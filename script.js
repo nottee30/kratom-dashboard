@@ -125,8 +125,16 @@ document
 
     <br><br>
 
-    🎁 ฟรี : ${c.free}
+    🚬 บุหรี่ซอง : ${c.cigarette}
 
+    <br><br>
+
+    📦 แคทตอล : ${c.carton}
+
+    <br><br>
+
+    🎁 ฟรี : ${c.free}
+    
     <br><br>
 
     ⭐ สะสม ${c.point}/8
