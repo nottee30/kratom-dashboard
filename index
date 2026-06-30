@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard ลูกค้า</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="loading">
+
+    <h1>🏆</h1>
+
+    <h2>กำลังโหลดข้อมูล...</h2>
+
+</div>
+
+<div id="app" style="display:none;">
+
+    <header>
+
+        <h1>🥤 Dashboard ลูกค้า</h1>
+
+        <p>อัปเดตจาก Google Sheets</p>
+
+    </header>
+
+    <section class="cards">
+
+        <div class="card">
+
+            <h3>🥤 น้ำทั้งหมด</h3>
+
+            <h2 id="totalWater">0</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💊 ยา35</h3>
+
+            <h2 id="total35">0</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💊 ยา55</h3>
+
+            <h2 id="total55">0</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🎁 ฟรี</h3>
+
+            <h2 id="totalFree">0</h2>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <input
+        id="search"
+        placeholder="🔍 ค้นหาชื่อลูกค้า">
+
+    </section>
+
+    <section id="customerCard">
+
+    </section>
+
+    <section>
+
+        <h2>
+
+🏆 Leaderboard
+
+</h2>
+
+        <div id="leaderboard">
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
