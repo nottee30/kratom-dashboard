@@ -181,6 +181,12 @@ function showCustomer(name){
 
 </div>
 
+<div class="pay-status">
+
+${c.paid ? "✅ จ่ายแล้ว" : "⏳ ยังไม่จ่าย"}
+
+</div>
+
 <div class="total-box">
 
 <p>
