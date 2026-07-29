@@ -543,3 +543,21 @@ input::placeholder{
         border-radius:15px;
 
 }
+
+.pay-status{
+
+    margin:10px 0;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    background:#e8f5e9;
+
+    color:#2e7d32;
+
+}
