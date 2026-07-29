@@ -153,7 +153,8 @@ ${c.water}
 
 </p>
 
-<button 
+<button
+class="pay-btn"
 onclick="event.stopPropagation(); goPay('${c.name}')">
 
 💳 จ่ายเงิน
