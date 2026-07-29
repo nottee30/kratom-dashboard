@@ -537,5 +537,9 @@ input::placeholder{
         grid-template-columns:1fr;
 
     }
+    .qr{
+        width:250px;
+        max-width:80%;
+        border-radius:15px;
 
 }
