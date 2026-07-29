@@ -1,5 +1,5 @@
 const API =
-"https://script.google.com/macros/s/AKfycbyoMW4WTaJ-58gQwNMwheb6Bvhu_PvB4chjLNw4taI-o1GY2hPXQ3jNRmJBIjpzgoZI/exec";
+"https://script.google.com/macros/s/AKfycbwYX1fG2ZYEnwTgi26hrvCf0x7kZ66OXYGoo_BS4J8m8o9uRz4eiiH_RHLlRdR4DzsI/exec";
 
 
 let name = "";
