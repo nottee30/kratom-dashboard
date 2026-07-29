@@ -146,9 +146,19 @@ onclick="showCustomer('${c.name}')">
 
 <p>
 
-🥤 น้ำ ${c.water} ขวด
+🥤
+น้ำ
+${c.water}
+ขวด
 
 </p>
+
+<button 
+onclick="event.stopPropagation(); goPay('${c.name}')">
+
+💳 จ่ายเงิน
+
+</button>
 
 </div>
 `;
@@ -377,3 +387,10 @@ setInterval(function(){
     loadData(false);
 
 },30000);
+function goPay(name){
+
+    window.location.href =
+    "pay.html?name=" +
+    encodeURIComponent(name);
+
+}
