@@ -2,98 +2,116 @@
 <html lang="th">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ร้านน้ำกระท่อม</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard ลูกค้า</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div id="loading">
-
-    <h1>🏆</h1>
-
+    <div class="loader"></div>
     <h2>กำลังโหลดข้อมูล...</h2>
-
 </div>
 
 <div id="app" style="display:none;">
 
-    <header>
+<header>
 
-        <h1>🥤 Dashboard ลูกค้า</h1>
+<h1>🥤 Dashboard ร้านน้ำกระท่อม</h1>
 
-        <p>อัปเดตจาก Google Sheets</p>
+<p id="updateTime">
+กำลังอัปเดต...
+</p>
 
-    </header>
+</header>
 
-    <section class="cards">
+<section class="summary">
 
-        <div class="card">
+<div class="summary-card">
 
-            <h3>🥤 น้ำทั้งหมด</h3>
+<h3>💰 ยอดขายรวม</h3>
 
-            <h2 id="totalWater">0</h2>
+<h2 id="sumMoney">0</h2>
 
-        </div>
+</div>
 
-        <div class="card">
+<div class="summary-card">
 
-            <h3>💊 ยา35</h3>
+<h3>👥 ลูกค้า</h3>
 
-            <h2 id="total35">0</h2>
+<h2 id="sumCustomer">0</h2>
 
-        </div>
+</div>
 
-        <div class="card">
+<div class="summary-card">
 
-            <h3>💊 ยา55</h3>
+<h3>🥤 น้ำทั้งหมด</h3>
 
-            <h2 id="total55">0</h2>
+<h2 id="sumWater">0</h2>
 
-        </div>
+</div>
 
-        <div class="card">
+<div class="summary-card">
 
-            <h3>🎁 ฟรี</h3>
+<h3>🎁 ขวดฟรี</h3>
 
-            <h2 id="totalFree">0</h2>
+<h2 id="sumFree">0</h2>
 
-        </div>
+</div>
 
-    </section>
+</section>
 
-    <section>
+<section>
 
-        <input
-        id="search"
-        placeholder="🔍 ค้นหาชื่อลูกค้า">
+<input
+type="text"
+id="search"
+placeholder="🔍 ค้นหาลูกค้า">
 
-    </section>
+</section>
 
-    <section id="customerCard">
+<section>
 
-    </section>
+<div id="customerCard">
 
-    <section>
+<h2>
+ค้นหาลูกค้า
+</h2>
 
-        <h2>
+</div>
 
-🏆 Leaderboard
+</section>
+
+<section>
+
+<h2 class="title">
+
+🏆 TOP ลูกค้า
 
 </h2>
 
-        <div id="leaderboard">
+<div id="leaderboard">
 
-        </div>
+</div>
 
-    </section>
+</section>
+
+<section>
+
+<h2 class="title">
+
+📋 ลูกค้าทั้งหมด
+
+</h2>
+
+<div id="list">
+
+</div>
+
+</section>
 
 </div>
 
