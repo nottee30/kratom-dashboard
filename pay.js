@@ -154,7 +154,7 @@ async function submitPayment(){
 
 
 
-            if(result=="OK"){
+            if(result.includes("OK")){
 
 
                 alert(
@@ -165,9 +165,7 @@ async function submitPayment(){
             }else{
 
 
-                alert(
-                "ส่งไม่สำเร็จ"
-                );
+                alert(result);
 
 
             }
