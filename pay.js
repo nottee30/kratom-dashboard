@@ -1,35 +1,93 @@
 const API =
 "https://script.google.com/macros/s/AKfycbze_l5sNMZ0ZEd-sRjZmuxDaGD9QoQhfqIiTbLvgbgEOBaBxfKlxHx-YDgvC42eQ62H/exec";
 
-const params = new URLSearchParams(window.location.search);
-const customerName = params.get("name");
 
-async function loadCustomer(){
+let name = "";
 
-    const response = await fetch(API);
+let customer;
 
-    const data = await response.json();
 
-    const customer =
-    data.find(c => c.name === customerName);
 
-    if(!customer){
+async function loadPay(){
 
-        document.getElementById("customerName").innerHTML =
-        "ไม่พบข้อมูลลูกค้า";
 
-        return;
+const params =
+new URLSearchParams(
+window.location.search
+);
 
-    }
 
-    document.getElementById("customerName").innerHTML =
-    "👤 " + customer.name;
+name =
+params.get("name");
 
-    document.getElementById("totalMoney").innerHTML =
-    "ยอดที่ต้องชำระ " +
-    customer.total.toLocaleString("th-TH") +
-    " บาท";
+
+
+document.getElementById("customerName")
+.innerHTML =
+"👤 " + name;
+
+
+
+const res =
+await fetch(API);
+
+
+
+const data =
+await res.json();
+
+
+
+customer =
+data.find(
+c=>c.name===name
+);
+
+
+
+if(customer){
+
+
+document.getElementById("amount")
+.innerHTML =
+
+customer.total.toLocaleString("th-TH")
++
+" บาท";
+
 
 }
 
-loadCustomer();
+
+}
+
+
+
+function submitPayment(){
+
+
+const file =
+document.getElementById("slip").files[0];
+
+
+if(!file){
+
+alert("กรุณาเลือกสลิป");
+
+return;
+
+}
+
+
+
+alert(
+"รับสลิปแล้ว รอตรวจสอบ"
+);
+
+
+}
+
+
+
+window.onload =
+loadPay;
