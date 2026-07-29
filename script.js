@@ -3,10 +3,14 @@ const API =
 
 let customers = [];
 
-async function loadData(){
+async function loadData(firstLoad = false){
 
-    document.getElementById("loading").style.display="flex";
-    document.getElementById("app").style.display="none";
+    if(firstLoad){
+
+        document.getElementById("loading").style.display="flex";
+        document.getElementById("app").style.display="none";
+
+    }
 
     try{
 
@@ -14,8 +18,12 @@ async function loadData(){
 
         customers = await response.json();
 
-        document.getElementById("loading").style.display="none";
-        document.getElementById("app").style.display="block";
+        if(firstLoad){
+
+            document.getElementById("loading").style.display="none";
+            document.getElementById("app").style.display="block";
+
+        }
 
         updateSummary();
 
@@ -28,8 +36,6 @@ async function loadData(){
         new Date().toLocaleString("th-TH");
 
     }catch(err){
-
-        alert("โหลดข้อมูลไม่สำเร็จ");
 
         console.log(err);
 
@@ -56,8 +62,7 @@ function updateSummary(){
     });
 
     document.getElementById("sumMoney").innerHTML =
-    totalMoney.toLocaleString("th-TH") +
-    " บาท";
+    totalMoney.toLocaleString("th-TH") + " บาท";
 
     document.getElementById("sumCustomer").innerHTML =
     customers.length;
@@ -75,21 +80,18 @@ function createLeaderboard(){
     const board =
     document.getElementById("leaderboard");
 
-    board.innerHTML="";
+    board.innerHTML = "";
 
     const sortData =
-    [...customers]
-    .sort((a,b)=>b.total-a.total);
+    [...customers].sort((a,b)=>b.total-a.total);
 
     sortData.forEach((c,index)=>{
 
-        let icon="🏅";
+        let icon = "🏅";
 
-        if(index==0) icon="🥇";
-
-        if(index==1) icon="🥈";
-
-        if(index==2) icon="🥉";
+        if(index===0) icon="🥇";
+        if(index===1) icon="🥈";
+        if(index===2) icon="🥉";
 
         board.innerHTML +=
 
@@ -98,15 +100,13 @@ function createLeaderboard(){
 
 <div class="rank-name">
 
-${icon}
-${c.name}
+${icon} ${c.name}
 
 </div>
 
 <div class="rank-money">
 
-${c.total.toLocaleString("th-TH")}
-บาท
+${c.total.toLocaleString("th-TH")} บาท
 
 </div>
 
@@ -116,13 +116,12 @@ ${c.total.toLocaleString("th-TH")}
     });
 
 }
-
 function renderCustomers(data){
 
     const list =
     document.getElementById("list");
 
-    list.innerHTML="";
+    list.innerHTML = "";
 
     data.forEach(c=>{
 
@@ -135,25 +134,19 @@ onclick="showCustomer('${c.name}')">
 
 <h3>
 
-👤
-${c.name}
+👤 ${c.name}
 
 </h3>
 
 <p>
 
-💰
-${c.total.toLocaleString("th-TH")}
-บาท
+💰 ${c.total.toLocaleString("th-TH")} บาท
 
 </p>
 
 <p>
 
-🥤
-น้ำ
-${c.water}
-ขวด
+🥤 น้ำ ${c.water} ขวด
 
 </p>
 
@@ -163,6 +156,7 @@ ${c.water}
     });
 
 }
+
 function showCustomer(name){
 
     const c =
@@ -194,8 +188,7 @@ function showCustomer(name){
 
 <h2>
 
-${c.total.toLocaleString("th-TH")}
-บาท
+${c.total.toLocaleString("th-TH")} บาท
 
 </h2>
 
@@ -209,12 +202,7 @@ ${c.total.toLocaleString("th-TH")}
 
 <p>${c.water} ขวด</p>
 
-<b>
-
-${c.waterPrice.toLocaleString("th-TH")}
-บาท
-
-</b>
+<b>${c.waterPrice.toLocaleString("th-TH")} บาท</b>
 
 </div>
 
@@ -224,12 +212,7 @@ ${c.waterPrice.toLocaleString("th-TH")}
 
 <p>${c.herb35} ขวด</p>
 
-<b>
-
-${c.herb35Price.toLocaleString("th-TH")}
-บาท
-
-</b>
+<b>${c.herb35Price.toLocaleString("th-TH")} บาท</b>
 
 </div>
 
@@ -239,12 +222,7 @@ ${c.herb35Price.toLocaleString("th-TH")}
 
 <p>${c.herb55} ขวด</p>
 
-<b>
-
-${c.herb55Price.toLocaleString("th-TH")}
-บาท
-
-</b>
+<b>${c.herb55Price.toLocaleString("th-TH")} บาท</b>
 
 </div>
 
@@ -254,12 +232,7 @@ ${c.herb55Price.toLocaleString("th-TH")}
 
 <p>${c.cigarette} ซอง</p>
 
-<b>
-
-${c.cigarettePrice.toLocaleString("th-TH")}
-บาท
-
-</b>
+<b>${c.cigarettePrice.toLocaleString("th-TH")} บาท</b>
 
 </div>
 
@@ -269,12 +242,7 @@ ${c.cigarettePrice.toLocaleString("th-TH")}
 
 <p>${c.carton}</p>
 
-<b>
-
-${c.cartonPrice.toLocaleString("th-TH")}
-บาท
-
-</b>
+<b>${c.cartonPrice.toLocaleString("th-TH")} บาท</b>
 
 </div>
 
@@ -328,7 +296,6 @@ ${c.free}
 `;
 
 }
-
 document
 .getElementById("search")
 .addEventListener("input",function(){
@@ -368,6 +335,7 @@ document
     }
 
 });
+
 function scrollToCustomer(){
 
     const card =
@@ -398,14 +366,14 @@ showCustomer = function(name){
 
 }
 
-setInterval(function(){
+window.onload = function(){
 
-    loadData();
-
-},30000);
-
-window.onload=function(){
-
-    loadData();
+    loadData(true);
 
 }
+
+setInterval(function(){
+
+    loadData(false);
+
+},30000);
