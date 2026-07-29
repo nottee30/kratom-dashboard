@@ -1,253 +1,411 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+const API =
+"https://script.google.com/macros/s/AKfycbze_l5sNMZ0ZEd-sRjZmuxDaGD9QoQhfqIiTbLvgbgEOBaBxfKlxHx-YDgvC42eQ62H/exec";
 
-body{
-    background:#0f172a;
-    color:#fff;
-    padding:20px;
-}
+let customers = [];
 
-header{
-    text-align:center;
-    margin-bottom:30px;
-}
+async function loadData(){
 
-header h1{
-    font-size:36px;
-    margin-bottom:10px;
-}
+    document.getElementById("loading").style.display="flex";
+    document.getElementById("app").style.display="none";
 
-header p{
-    color:#94a3b8;
-}
+    try{
 
-.summary{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    margin-bottom:30px;
-}
+        const response = await fetch(API);
 
-.summary-card{
-    background:#1e293b;
-    border-radius:18px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
-    transition:.25s;
-}
+        customers = await response.json();
 
-.summary-card:hover{
-    transform:translateY(-5px);
-}
+        document.getElementById("loading").style.display="none";
+        document.getElementById("app").style.display="block";
 
-.summary-card h3{
-    color:#cbd5e1;
-    margin-bottom:12px;
-}
+        updateSummary();
 
-.summary-card h2{
-    color:#22c55e;
-    font-size:34px;
-}
+        createLeaderboard();
 
-input{
-    width:100%;
-    padding:15px;
-    font-size:18px;
-    border:none;
-    border-radius:15px;
-    outline:none;
-    margin-bottom:25px;
-}
+        renderCustomers(customers);
 
-#customerCard{
-    display:none;
-    background:#1e293b;
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:30px;
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
-}
+        document.getElementById("updateTime").innerHTML =
+        "อัปเดตล่าสุด : " +
+        new Date().toLocaleString("th-TH");
 
-.customer-name{
-    font-size:30px;
-    text-align:center;
-    margin-bottom:20px;
-}
+    }catch(err){
 
-.total-box{
-    text-align:center;
-    background:#0f766e;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-}
+        alert("โหลดข้อมูลไม่สำเร็จ");
 
-.total-box h2{
-    font-size:38px;
-    margin-top:10px;
-}
+        console.log(err);
 
-.detail-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.detail-item{
-    background:#334155;
-    border-radius:15px;
-    padding:18px;
-    text-align:center;
-}
-
-.detail-item h3{
-    margin-bottom:10px;
-}
-
-.detail-item p{
-    margin:5px 0;
-}
-
-.point-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.point-card{
-    background:#334155;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-}
-
-.point-card h2{
-    margin-top:10px;
-    color:#4ade80;
-}
-
-.title{
-    margin:25px 0 15px;
-}
-
-#leaderboard{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-bottom:35px;
-}
-
-.rank{
-    background:#1e293b;
-    border-radius:15px;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    transition:.25s;
-}
-
-.rank:hover{
-    background:#273549;
-}
-
-.rank-name{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.rank-money{
-    color:#4ade80;
-    font-size:22px;
-    font-weight:bold;
-}
-
-#list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-}
-
-.customer{
-    background:#1e293b;
-    border-radius:15px;
-    padding:18px;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.customer:hover{
-    transform:translateY(-4px);
-    background:#29384f;
-}
-
-.customer h3{
-    margin-bottom:10px;
-}
-
-.customer p{
-    color:#cbd5e1;
-}
-
-#loading{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.loader{
-    width:70px;
-    height:70px;
-    border:7px solid #334155;
-    border-top:7px solid #22c55e;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-    margin-bottom:25px;
-}
-
-@keyframes spin{
-    from{
-        transform:rotate(0deg);
     }
-    to{
-        transform:rotate(360deg);
+
+}
+
+function updateSummary(){
+
+    let totalMoney = 0;
+
+    let totalWater = 0;
+
+    let totalFree = 0;
+
+    customers.forEach(c=>{
+
+        totalMoney += c.total;
+
+        totalWater += c.water;
+
+        totalFree += c.free;
+
+    });
+
+    document.getElementById("sumMoney").innerHTML =
+    totalMoney.toLocaleString("th-TH") +
+    " บาท";
+
+    document.getElementById("sumCustomer").innerHTML =
+    customers.length;
+
+    document.getElementById("sumWater").innerHTML =
+    totalWater.toLocaleString("th-TH");
+
+    document.getElementById("sumFree").innerHTML =
+    totalFree;
+
+}
+
+function createLeaderboard(){
+
+    const board =
+    document.getElementById("leaderboard");
+
+    board.innerHTML="";
+
+    const sortData =
+    [...customers]
+    .sort((a,b)=>b.total-a.total);
+
+    sortData.forEach((c,index)=>{
+
+        let icon="🏅";
+
+        if(index==0) icon="🥇";
+
+        if(index==1) icon="🥈";
+
+        if(index==2) icon="🥉";
+
+        board.innerHTML +=
+
+`
+<div class="rank">
+
+<div class="rank-name">
+
+${icon}
+${c.name}
+
+</div>
+
+<div class="rank-money">
+
+${c.total.toLocaleString("th-TH")}
+บาท
+
+</div>
+
+</div>
+`;
+
+    });
+
+}
+
+function renderCustomers(data){
+
+    const list =
+    document.getElementById("list");
+
+    list.innerHTML="";
+
+    data.forEach(c=>{
+
+        list.innerHTML +=
+
+`
+<div
+class="customer"
+onclick="showCustomer('${c.name}')">
+
+<h3>
+
+👤
+${c.name}
+
+</h3>
+
+<p>
+
+💰
+${c.total.toLocaleString("th-TH")}
+บาท
+
+</p>
+
+<p>
+
+🥤
+น้ำ
+${c.water}
+ขวด
+
+</p>
+
+</div>
+`;
+
+    });
+
+}
+function showCustomer(name){
+
+    const c =
+    customers.find(x=>x.name===name);
+
+    if(!c) return;
+
+    const percent =
+    Math.min((c.point/8)*100,100);
+
+    document.getElementById("customerCard").style.display="block";
+
+    document.getElementById("customerCard").innerHTML =
+
+`
+<div class="customer-name">
+
+👤 ${c.name}
+
+</div>
+
+<div class="total-box">
+
+<p>
+
+ยอดซื้อรวม
+
+</p>
+
+<h2>
+
+${c.total.toLocaleString("th-TH")}
+บาท
+
+</h2>
+
+</div>
+
+<div class="detail-grid">
+
+<div class="detail-item">
+
+<h3>🥤 น้ำ</h3>
+
+<p>${c.water} ขวด</p>
+
+<b>
+
+${c.waterPrice.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>💊 ยา69</h3>
+
+<p>${c.herb35} ขวด</p>
+
+<b>
+
+${c.herb35Price.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>💊 ยา</h3>
+
+<p>${c.herb55} ขวด</p>
+
+<b>
+
+${c.herb55Price.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>🚬 บุหรี่</h3>
+
+<p>${c.cigarette} ซอง</p>
+
+<b>
+
+${c.cigarettePrice.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>📦 แคทตอล</h3>
+
+<p>${c.carton}</p>
+
+<b>
+
+${c.cartonPrice.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+</div>
+
+<div class="point-box">
+
+<div class="point-card">
+
+<h3>
+
+⭐ แต้มสะสม
+
+</h3>
+
+<h2>
+
+${c.point}/8
+
+</h2>
+
+<div class="progress">
+
+<div
+style="width:${percent}%">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="point-card">
+
+<h3>
+
+🎁 ขวดฟรี
+
+</h3>
+
+<h2>
+
+${c.free}
+
+</h2>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+document
+.getElementById("search")
+.addEventListener("input",function(){
+
+    const keyword =
+    this.value
+    .trim()
+    .toLowerCase();
+
+    if(keyword===""){
+
+        renderCustomers(customers);
+
+        document
+        .getElementById("customerCard")
+        .style.display="none";
+
+        return;
+
     }
+
+    const result =
+    customers.filter(c=>
+
+        c.name
+        .toLowerCase()
+        .includes(keyword)
+
+    );
+
+    renderCustomers(result);
+
+    if(result.length===1){
+
+        showCustomer(result[0].name);
+
+    }
+
+});
+function scrollToCustomer(){
+
+    const card =
+    document.getElementById("customerCard");
+
+    if(card.style.display==="block"){
+
+        card.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"start"
+
+        });
+
+    }
+
 }
 
-@media(max-width:700px){
+const oldShowCustomer =
+showCustomer;
 
-header h1{
-    font-size:28px;
+showCustomer = function(name){
+
+    oldShowCustomer(name);
+
+    scrollToCustomer();
+
 }
 
-.summary-card h2{
-    font-size:28px;
-}
+setInterval(function(){
 
-.customer-name{
-    font-size:24px;
-}
+    loadData();
 
-.total-box h2{
-    font-size:30px;
-}
+},30000);
 
-.rank{
-    flex-direction:column;
-    gap:8px;
-}
+window.onload=function(){
 
-.point-box{
-    grid-template-columns:1fr;
-}
+    loadData();
 
 }
