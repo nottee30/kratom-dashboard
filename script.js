@@ -153,14 +153,6 @@ ${c.water}
 
 </p>
 
-<button
-class="pay-btn"
-onclick="event.stopPropagation(); goPay('${c.name}')">
-
-💳 จ่ายเงิน
-
-</button>
-
 </div>
 `;
 
@@ -202,6 +194,14 @@ function showCustomer(name){
 ${c.total.toLocaleString("th-TH")} บาท
 
 </h2>
+
+<button 
+class="pay-btn"
+onclick="goPay('${c.name}')">
+
+💳 จ่ายเงิน
+
+</button>
 
 </div>
 
