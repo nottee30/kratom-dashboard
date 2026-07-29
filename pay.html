@@ -1,86 +1,70 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ชำระเงิน</title>
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-
-.pay-box{
-max-width:600px;
-margin:30px auto;
-background:#1e293b;
-padding:25px;
-border-radius:20px;
-text-align:center;
-}
-
-.pay-box h1{
-margin-bottom:15px;
-}
-
-.bank{
-margin:20px 0;
-padding:20px;
-background:#0f172a;
-border-radius:15px;
-}
-
-button{
-padding:15px 30px;
-border:none;
-border-radius:12px;
-background:#22c55e;
-color:white;
-font-size:18px;
-cursor:pointer;
-margin-top:20px;
-}
-
-input[type=file]{
-margin-top:20px;
-}
-
-</style>
-
 </head>
+
 
 <body>
 
+
 <div class="pay-box">
 
-<h1 id="customerName">กำลังโหลด...</h1>
 
-<h2 id="totalMoney"></h2>
+<h1>
+💳 ชำระเงิน
+</h1>
 
-<div class="bank">
 
-<h3>โอนเข้าบัญชี</h3>
+<h2 id="customerName">
+กำลังโหลด...
+</h2>
 
-<p>ธนาคาร : กสิกรไทย</p>
 
-<p>ชื่อบัญชี : ณัฐนันท์   พันธุ์บุรี</p>
+<h1 id="amount">
+0 บาท
+</h1>
 
-<p>เลขบัญชี : 954-218-8860</p>
 
-</div>
 
-<input type="file" id="slip">
+<img 
+src="https://drive.google.com/file/d/1kKRuaC-Y-PQcOVzM1YXRBNIM85dRE02r/view?usp=sharing"
+class="qr">
 
-<br>
 
-<button id="sendBtn">
+
+<input 
+type="file"
+id="slip"
+accept="image/*">
+
+
+
+<button 
+onclick="submitPayment()">
 
 ส่งสลิป
 
 </button>
 
+
+
 </div>
+
+
 
 <script src="pay.js"></script>
 
+
 </body>
+
 </html>
