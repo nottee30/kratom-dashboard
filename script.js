@@ -1,77 +1,331 @@
 const API =
 "https://script.google.com/macros/s/AKfycbze_l5sNMZ0ZEd-sRjZmuxDaGD9QoQhfqIiTbLvgbgEOBaBxfKlxHx-YDgvC42eQ62H/exec";
 
-let customers=[];
+let customers = [];
 
 async function loadData(){
 
+    document.getElementById("loading").style.display="flex";
+    document.getElementById("app").style.display="none";
+
     try{
 
-        const res=await fetch(API);
+        const response = await fetch(API);
 
-        customers=await res.json();
+        customers = await response.json();
 
         document.getElementById("loading").style.display="none";
         document.getElementById("app").style.display="block";
 
-        render();
+        updateSummary();
 
-    }catch(e){
+        createLeaderboard();
 
-        document.getElementById("loading").innerHTML=
-        "<h2>โหลดข้อมูลไม่สำเร็จ</h2>";
+        renderCustomers(customers);
 
-        console.log(e);
+        document.getElementById("updateTime").innerHTML =
+        "อัปเดตล่าสุด : " +
+        new Date().toLocaleString("th-TH");
+
+    }catch(err){
+
+        alert("โหลดข้อมูลไม่สำเร็จ");
+
+        console.log(err);
 
     }
 
 }
 
-function render(){
+function updateSummary(){
 
-    let water=0;
-    let herb35=0;
-    let herb55=0;
-    let free=0;
+    let totalMoney = 0;
+
+    let totalWater = 0;
+
+    let totalFree = 0;
 
     customers.forEach(c=>{
 
-        water+=Number(c.water);
+        totalMoney += c.total;
 
-        herb35+=Number(c.herb35);
+        totalWater += c.water;
 
-        herb55+=Number(c.herb55);
-
-        free+=Number(c.free);
+        totalFree += c.free;
 
     });
 
-    document.getElementById("totalWater").innerText=water;
-    document.getElementById("total35").innerText=herb35;
-    document.getElementById("total55").innerText=herb55;
-    document.getElementById("totalFree").innerText=free;
+    document.getElementById("sumMoney").innerHTML =
+    totalMoney.toLocaleString("th-TH") +
+    " บาท";
 
-    customers.sort((a,b)=>b.water-a.water);
+    document.getElementById("sumCustomer").innerHTML =
+    customers.length;
 
-    const board=document.getElementById("leaderboard");
+    document.getElementById("sumWater").innerHTML =
+    totalWater.toLocaleString("th-TH");
+
+    document.getElementById("sumFree").innerHTML =
+    totalFree;
+
+}
+
+function createLeaderboard(){
+
+    const board =
+    document.getElementById("leaderboard");
 
     board.innerHTML="";
 
-    customers.forEach((c,i)=>{
+    const sortData =
+    [...customers]
+    .sort((a,b)=>b.total-a.total);
 
-        board.innerHTML+=`
+    sortData.forEach((c,index)=>{
 
-        <div class="rank">
+        let icon="🏅";
 
-            <span>${i+1}. ${c.name}</span>
+        if(index==0) icon="🥇";
 
-            <strong>${c.water}</strong>
+        if(index==1) icon="🥈";
 
-        </div>
+        if(index==2) icon="🥉";
 
-        `;
+        board.innerHTML +=
+
+`
+<div class="rank">
+
+<div class="rank-name">
+
+${icon}
+${c.name}
+
+</div>
+
+<div class="rank-money">
+
+${c.total.toLocaleString("th-TH")}
+บาท
+
+</div>
+
+</div>
+`;
 
     });
+
+}
+
+function renderCustomers(data){
+
+    const list =
+    document.getElementById("list");
+
+    list.innerHTML="";
+
+    data.forEach(c=>{
+
+        list.innerHTML +=
+
+`
+<div
+class="customer"
+onclick="showCustomer('${c.name}')">
+
+<h3>
+
+👤
+${c.name}
+
+</h3>
+
+<p>
+
+💰
+${c.total.toLocaleString("th-TH")}
+บาท
+
+</p>
+
+<p>
+
+🥤
+น้ำ
+${c.water}
+ขวด
+
+</p>
+
+</div>
+`;
+
+    });
+
+}
+function showCustomer(name){
+
+    const c =
+    customers.find(x=>x.name===name);
+
+    if(!c) return;
+
+    const percent =
+    Math.min((c.point/8)*100,100);
+
+    document.getElementById("customerCard").style.display="block";
+
+    document.getElementById("customerCard").innerHTML =
+
+`
+<div class="customer-name">
+
+👤 ${c.name}
+
+</div>
+
+<div class="total-box">
+
+<p>
+
+ยอดซื้อรวม
+
+</p>
+
+<h2>
+
+${c.total.toLocaleString("th-TH")}
+บาท
+
+</h2>
+
+</div>
+
+<div class="detail-grid">
+
+<div class="detail-item">
+
+<h3>🥤 น้ำ</h3>
+
+<p>${c.water} ขวด</p>
+
+<b>
+
+${c.waterPrice.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>💊 ยา69</h3>
+
+<p>${c.herb35} ขวด</p>
+
+<b>
+
+${c.herb35Price.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>💊 ยา</h3>
+
+<p>${c.herb55} ขวด</p>
+
+<b>
+
+${c.herb55Price.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>🚬 บุหรี่</h3>
+
+<p>${c.cigarette} ซอง</p>
+
+<b>
+
+${c.cigarettePrice.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+<div class="detail-item">
+
+<h3>📦 แคทตอล</h3>
+
+<p>${c.carton}</p>
+
+<b>
+
+${c.cartonPrice.toLocaleString("th-TH")}
+บาท
+
+</b>
+
+</div>
+
+</div>
+
+<div class="point-box">
+
+<div class="point-card">
+
+<h3>
+
+⭐ แต้มสะสม
+
+</h3>
+
+<h2>
+
+${c.point}/8
+
+</h2>
+
+<div class="progress">
+
+<div
+style="width:${percent}%">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="point-card">
+
+<h3>
+
+🎁 ขวดฟรี
+
+</h3>
+
+<h2>
+
+${c.free}
+
+</h2>
+
+</div>
+
+</div>
+
+`;
 
 }
 
@@ -79,80 +333,79 @@ document
 .getElementById("search")
 .addEventListener("input",function(){
 
-    const keyword=this.value.trim();
+    const keyword =
+    this.value
+    .trim()
+    .toLowerCase();
 
-    const card=document.getElementById("customerCard");
+    if(keyword===""){
 
-    if(keyword==""){
+        renderCustomers(customers);
 
-        card.style.display="none";
-
-        return;
-
-    }
-
-    const c=customers.find(x=>x.name.includes(keyword));
-
-    if(!c){
-
-        card.style.display="block";
-
-        card.innerHTML="<h2>ไม่พบข้อมูล</h2>";
+        document
+        .getElementById("customerCard")
+        .style.display="none";
 
         return;
 
     }
 
-    let percent=(c.point/8)*100;
+    const result =
+    customers.filter(c=>
 
-    card.style.display="block";
+        c.name
+        .toLowerCase()
+        .includes(keyword)
 
-    card.innerHTML=`
+    );
 
-    <h2>${c.name}</h2>
+    renderCustomers(result);
 
-    <br>
+    if(result.length===1){
 
-    🥤 น้ำ : ${c.water}
+        showCustomer(result[0].name);
 
-    <br><br>
-
-    💊 ยา35 : ${c.herb35}
-
-    <br><br>
-
-    💊 ยา55 : ${c.herb55}
-
-    <br><br>
-
-    🚬 บุหรี่ซอง : ${c.cigarette}
-
-    <br><br>
-
-    📦 แคทตอล : ${c.carton}
-
-    <br><br>
-
-    🎁 ฟรี : ${c.free}
-    
-    <br><br>
-
-    ⭐ สะสม ${c.point}/8
-
-    <div class="progress">
-
-    <div style="width:${percent}%"></div>
-
-    </div>
-
-    <br>
-
-    เหลืออีก ${8-c.point} ขวด
-
-    `;
+    }
 
 });
+function scrollToCustomer(){
 
-loadData();
+    const card =
+    document.getElementById("customerCard");
 
-setInterval(loadData,30000);
+    if(card.style.display==="block"){
+
+        card.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"start"
+
+        });
+
+    }
+
+}
+
+const oldShowCustomer =
+showCustomer;
+
+showCustomer = function(name){
+
+    oldShowCustomer(name);
+
+    scrollToCustomer();
+
+}
+
+setInterval(function(){
+
+    loadData();
+
+},30000);
+
+window.onload=function(){
+
+    loadData();
+
+}
