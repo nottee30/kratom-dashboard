@@ -3,10 +3,10 @@ const API =
 
 let customers = [];
 
-async function loadData(){
+async function loadData(firstLoad = false){
 
-    document.getElementById("loading").style.display="flex";
-    document.getElementById("app").style.display="none";
+    document.getElementById("loading").style.display="none";
+    document.getElementById("app").style.display="block";
 
     try{
 
@@ -398,14 +398,14 @@ showCustomer = function(name){
 
 }
 
-setInterval(function(){
-
-    loadData();
-
-},30000);
-
 window.onload=function(){
 
-    loadData();
+    loadData(true);
 
 }
+
+setInterval(function(){
+
+    loadData(false);
+
+},30000);
