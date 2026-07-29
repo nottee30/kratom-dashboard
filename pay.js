@@ -1,5 +1,5 @@
 const API =
-"https://script.google.com/macros/s/AKfycbzQDfSmzJbdGI66XEsHQsxJVRCxO4X6DTm0CP1nvpJeKYw7oWutWubeb5-hORjtGq-9/exec";
+"https://script.google.com/macros/s/AKfycbzrHzoVbjGQo03VvuBEVmSCmJNe-px1PxxS3Wp15bbPm_flkjmi4D-PmfeVaevDbQE/exec";
 
 
 let name = "";
@@ -141,9 +141,8 @@ async function submitPayment(){
             await fetch(API,{
 
                 method:"POST",
-
-                body:
-                JSON.stringify(payload)
+                mode:"no-cors",
+                body:JSON.stringify(payload)
 
             });
 
