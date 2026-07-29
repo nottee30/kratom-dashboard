@@ -178,7 +178,7 @@ async function submitPayment(){
             console.log(err);
 
             alert(
-            "เกิดข้อผิดพลาด"
+            "ERROR : " + err.message
             );
 
 
