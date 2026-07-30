@@ -39,15 +39,24 @@ header p{
 
 }
 
-.summary{
+.summary-card{
 
-    display:grid;
+    background:rgba(30,41,59,.9);
 
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    backdrop-filter:blur(12px);
 
-    gap:20px;
+    border:1px solid rgba(255,255,255,.08);
 
-    margin-bottom:30px;
+    border-radius:22px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.35);
+
+    transition:.3s;
 
 }
 
@@ -69,7 +78,11 @@ header p{
 
 .summary-card:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 25px 45px rgba(0,0,0,.45);
 
 }
 
@@ -340,9 +353,11 @@ input::placeholder{
 
     background:#1e293b;
 
-    border-radius:16px;
+    border-radius:18px;
 
-    padding:18px 22px;
+    padding:18px 24px;
+
+    margin-bottom:14px;
 
     display:flex;
 
@@ -350,7 +365,9 @@ input::placeholder{
 
     align-items:center;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    transition:.25s;
+
+    border:1px solid rgba(255,255,255,.05);
 
 }
 
@@ -369,6 +386,14 @@ input::placeholder{
     font-size:20px;
 
     font-weight:bold;
+
+}
+
+.rank:hover{
+
+    transform:translateX(6px);
+
+    background:#273449;
 
 }
 
@@ -392,17 +417,21 @@ input::placeholder{
 
     padding:20px;
 
+    margin-bottom:16px;
+
     cursor:pointer;
 
     transition:.25s;
+
+    border:1px solid rgba(255,255,255,.05);
 
 }
 
 .customer:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-4px);
 
-    box-shadow:0 8px 24px rgba(0,0,0,.35);
+    background:#263449;
 
 }
 
@@ -661,5 +690,129 @@ input::placeholder{
     font-size:42px;
 
     font-weight:bold;
+
+}
+#slip{
+
+    width:100%;
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+#slip::file-selector-button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 28px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-right:15px;
+
+    transition:.25s;
+
+}
+
+#slip::file-selector-button:hover{
+
+    background:#1d4ed8;
+
+}
+.pay-box button{
+
+width:100%;
+
+padding:18px;
+
+margin-top:25px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:#22c55e;
+
+color:white;
+
+transition:.25s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+.pay-box button:hover{
+
+transform:translateY(-2px);
+
+background:#16a34a;
+
+}
+
+.pay-box button:active{
+
+    transform:scale(.98);
+
+}
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:16px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    background:#16a34a;
+
+    color:white;
+
+    transition:.25s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+button:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+button:active{
+
+    transform:scale(.98);
 
 }
