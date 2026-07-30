@@ -538,10 +538,24 @@ input::placeholder{
 
     }
     .qr{
-        width:250px;
-        max-width:80%;
-        border-radius:15px;
 
+    width:320px;
+
+    max-width:90%;
+
+    display:block;
+
+    margin:30px auto;
+
+    border-radius:20px;
+
+    background:white;
+
+    padding:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+}
 }
 
 .pay-status{
@@ -592,5 +606,60 @@ input::placeholder{
     background:#16a34a;
 
     transform:scale(1.02);
+
+}
+.pay-header{
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.pay-header h1{
+
+    color:#22c55e;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.pay-header h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.pay-header p{
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+#amount{
+
+    color:#facc15;
+
+    font-size:42px;
+
+    font-weight:bold;
 
 }
