@@ -7,7 +7,15 @@
 
 body{
 
-    background:#0f172a;
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0f172a 0%,
+        #111827 50%,
+        #0b1220 100%
+    );
 
     color:#fff;
 
@@ -425,6 +433,8 @@ input::placeholder{
 
     border:1px solid rgba(255,255,255,.05);
 
+    animation:cardShow .45s ease;
+
 }
 
 .customer:hover{
@@ -814,5 +824,78 @@ button:hover{
 button:active{
 
     transform:scale(.98);
+
+}
+body{
+
+    animation:fadePage .6s ease;
+
+}
+
+@keyframes fadePage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.summary-card,
+.rank,
+.customer,
+#customerCard,
+.pay-box{
+
+    animation:fadeUp .45s ease;
 
 }
