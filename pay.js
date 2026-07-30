@@ -65,12 +65,13 @@ async function loadPay(){
 
 async function submitPayment(){
 
+    const button =
+    document.getElementById("submitBtn");
 
     const file =
     document
     .getElementById("slip")
     .files[0];
-
 
 
     if(!file){
@@ -82,7 +83,6 @@ async function submitPayment(){
     }
 
 
-
     if(!customer){
 
         alert("ไม่พบข้อมูลลูกค้า");
@@ -92,71 +92,73 @@ async function submitPayment(){
     }
 
 
+    // =========================
+    // ป้องกันการกดส่งซ้ำ
+    // =========================
+
+    button.disabled = true;
+
+    button.innerHTML =
+    "⏳ กำลังส่งสลิป...";
+
 
     const reader =
     new FileReader();
 
 
-
     reader.onload = async function(){
-
 
         const base64 =
         reader.result
         .split(",")[1];
 
 
-
         const payload = {
-
 
             customer:
             customer.name,
 
-
             amount:
             customer.total,
-
 
             file:
             base64,
 
-
             type:
             file.type,
-
 
             name:
             file.name
 
-
         };
 
 
-
         try{
-
 
             const response =
             await fetch(API,{
 
                 method:"POST",
+
                 headers:{
-                    "Content-Type":"text/plain;charset=utf-8"
+                    "Content-Type":
+                    "text/plain;charset=utf-8"
                 },
-                body:JSON.stringify(payload)
+
+                body:
+                JSON.stringify(payload)
 
             });
-
 
 
             const result =
             await response.text();
 
 
-
             if(result.includes("OK")){
 
+                button.innerHTML =
+                "✅ ส่งสลิปแล้ว";
 
                 alert(
                 "ส่งสลิปเรียบร้อย รอตรวจสอบ"
@@ -165,34 +167,38 @@ async function submitPayment(){
 
             }else{
 
+                button.disabled = false;
+
+                button.innerHTML =
+                "📤 ส่งสลิป";
 
                 alert(result);
-
 
             }
 
 
-
         }catch(err){
-
 
             console.log(err);
 
+
+            button.disabled = false;
+
+            button.innerHTML =
+            "📤 ส่งสลิป";
+
+
             alert(
-            "ERROR : " + err.message
+            "ERROR : " +
+            err.message
             );
 
-
         }
-
 
     };
 
 
-
     reader.readAsDataURL(file);
-
-
 
 }
 
