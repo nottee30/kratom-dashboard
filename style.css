@@ -561,3 +561,36 @@ input::placeholder{
     color:#2e7d32;
 
 }
+.pay-btn{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#22c55e;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.pay-btn:hover{
+
+    background:#16a34a;
+
+    transform:scale(1.02);
+
+}
