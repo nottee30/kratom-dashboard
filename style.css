@@ -1104,13 +1104,13 @@ box-shadow:
 
     position:relative;
 
-    overflow:hidden;
-
     border-radius:22px;
 
     background:#1e293b;
 
-    border:2px solid rgba(255,255,255,.08);
+    overflow:hidden;
+
+    isolation:isolate;
 
 }
 .customer-box::before{
@@ -1119,25 +1119,37 @@ box-shadow:
 
     position:absolute;
 
-    inset:-2px;
+    inset:-3px;
 
-    border-radius:22px;
+    border-radius:24px;
 
-    padding:2px;
-
-    pointer-events:none;
+    z-index:0;
 
     opacity:0;
 
-    transition:.35s;
+    transition:.3s;
 
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+}
+.customer-box::after{
 
-    -webkit-mask-composite:xor;
+    content:"";
 
-    mask-composite:exclude;
+    position:absolute;
+
+    inset:3px;
+
+    background:#1e293b;
+
+    border-radius:19px;
+
+    z-index:0;
+
+}
+.customer-box > *{
+
+    position:relative;
+
+    z-index:2;
 
 }
 /* ===========================
@@ -1147,6 +1159,7 @@ box-shadow:
 .customer-box.gold::before{
 
     opacity:1;
+    z-index:0;
 
     background:
     conic-gradient(
@@ -1172,6 +1185,21 @@ box-shadow:
     animation:borderGold 2s linear infinite;
 
 }
+.customer-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:3px;
+
+    background:#1e293b;
+
+    border-radius:19px;
+
+    z-index:-1;
+
+}
 
 /* ===========================
    Silver Border
@@ -1180,6 +1208,7 @@ box-shadow:
 .customer-box.silver::before{
 
     opacity:1;
+    z-index:0;
 
     background:
     conic-gradient(
@@ -1213,6 +1242,7 @@ box-shadow:
 .customer-box.bronze::before{
 
     opacity:1;
+    z-index:0;
 
     background:
     conic-gradient(
@@ -1321,6 +1351,12 @@ box-shadow:
 }
 @keyframes borderGold{
 
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
     to{
 
         transform:rotate(360deg);
@@ -1328,9 +1364,16 @@ box-shadow:
     }
 
 }
+
 
 @keyframes borderSilver{
 
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
     to{
 
         transform:rotate(360deg);
@@ -1339,12 +1382,42 @@ box-shadow:
 
 }
 
+
 @keyframes borderBronze{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
 
     to{
 
         transform:rotate(360deg);
 
     }
+
+}
+.customer-box.gold::before{
+
+    filter:
+    drop-shadow(0 0 8px #ffd700)
+    drop-shadow(0 0 18px #ffd700);
+
+}
+
+.customer-box.silver::before{
+
+    filter:
+    drop-shadow(0 0 8px #ffffff)
+    drop-shadow(0 0 15px #cccccc);
+
+}
+
+.customer-box.bronze::before{
+
+    filter:
+    drop-shadow(0 0 8px #cd7f32)
+    drop-shadow(0 0 15px #e7a15a);
 
 }
