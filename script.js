@@ -254,6 +254,18 @@ function showCustomer(name){
 
     if(!c) return;
 
+    const rankList =
+    [...customers].sort((a,b)=>b.total-a.total);
+
+    const rank =
+    rankList.findIndex(x=>x.name===c.name)+1;
+
+    let rankClass="";
+
+    if(rank===1) rankClass="gold";
+    else if(rank===2) rankClass="silver";
+    else if(rank===3) rankClass="bronze";
+
     const percent =
     Math.min((c.point/8)*100,100);
 
@@ -262,6 +274,8 @@ function showCustomer(name){
     document.getElementById("customerCard").innerHTML =
 
 `
+<div class="customer-box ${rankClass}">
+
 <div class="customer-name">
 
 👤 ${c.name}
@@ -402,6 +416,8 @@ style="width:${percent}%">
 ${c.free}
 
 </h2>
+
+</div>
 
 </div>
 
