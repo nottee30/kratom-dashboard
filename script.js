@@ -383,9 +383,27 @@ showCustomer = function(name){
 
 }
 
-window.onload = function(){
+window.onload = async function(){
 
-    loadData(true);
+    await loadData(true);
+
+    const params =
+    new URLSearchParams(window.location.search);
+
+    const customerName =
+    params.get("customer");
+
+    if(customerName){
+
+        showCustomer(customerName);
+
+        history.replaceState(
+            {},
+            "",
+            "index.html"
+        );
+
+    }
 
 }
 
