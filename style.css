@@ -1466,3 +1466,82 @@ box-shadow:
     }
 
 }
+/*==========================
+ Rank Ribbon
+==========================*/
+
+.rank-ribbon{
+
+    position:absolute;
+
+    top:18px;
+
+    right:-38px;
+
+    width:170px;
+
+    text-align:center;
+
+    padding:8px 0;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#fff;
+
+    transform:rotate(40deg);
+
+    z-index:20;
+
+    letter-spacing:1px;
+
+    animation:ribbonFloat 2s ease-in-out infinite;
+
+}
+
+.rank-ribbon.gold{
+
+    background:linear-gradient(90deg,#FFD700,#FFB800);
+
+    color:#111;
+
+    box-shadow:0 0 20px rgba(255,215,0,.5);
+
+}
+
+.rank-ribbon.silver{
+
+    background:linear-gradient(90deg,#ECECEC,#BEBEBE);
+
+    color:#111;
+
+    box-shadow:0 0 20px rgba(255,255,255,.35);
+
+}
+
+.rank-ribbon.bronze{
+
+    background:linear-gradient(90deg,#CD7F32,#E7A15A);
+
+    color:#fff;
+
+    box-shadow:0 0 20px rgba(205,127,50,.4);
+
+}
+
+@keyframes ribbonFloat{
+
+    0%,100%{
+
+        transform:rotate(40deg) translateY(0);
+
+    }
+
+    50%{
+
+        transform:rotate(40deg) translateY(-3px);
+
+    }
+
+}
