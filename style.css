@@ -1183,21 +1183,9 @@ box-shadow:
     );
 
     animation:borderGold 2s linear infinite;
-
-}
-.customer-box::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:3px;
-
-    background:#1e293b;
-
-    border-radius:19px;
-
-    z-index:-1;
+    filter:
+    drop-shadow(0 0 8px #ffd700)
+    drop-shadow(0 0 18px #ffd700);
 
 }
 
@@ -1232,6 +1220,9 @@ box-shadow:
     );
 
     animation:borderSilver 2s linear infinite;
+    filter:
+    drop-shadow(0 0 8px #ffd700)
+    drop-shadow(0 0 18px #ffd700);
 
 }
 
@@ -1266,7 +1257,9 @@ box-shadow:
     );
 
     animation:borderBronze 2s linear infinite;
-
+    filter:
+    drop-shadow(0 0 8px #cd7f32)
+    drop-shadow(0 0 15px #e7a15a);
 }
 
 
@@ -1419,5 +1412,161 @@ box-shadow:
     filter:
     drop-shadow(0 0 8px #cd7f32)
     drop-shadow(0 0 15px #e7a15a);
+
+}
+
+@keyframes lightningPulse{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+
+    50%{
+
+        opacity:.65;
+
+    }
+
+}
+
+
+.customer-box.gold::before{
+
+    animation:
+    borderGold 2s linear infinite,
+    lightningPulse .8s infinite;
+
+}
+
+
+.customer-box.silver::before{
+
+    animation:
+    borderSilver 2s linear infinite,
+    lightningPulse .8s infinite;
+
+}
+
+
+.customer-box.bronze::before{
+
+    animation:
+    borderBronze 2s linear infinite,
+    lightningPulse .8s infinite;
+
+}
+/* ===========================
+   Rank Power Level
+=========================== */
+
+
+/* TOP 1 */
+
+.customer-box.gold:hover::before{
+
+    animation-duration:.8s;
+
+    filter:
+    drop-shadow(0 0 12px #FFD700)
+    drop-shadow(0 0 30px #FFD700);
+
+}
+
+
+.customer-box.gold:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 35px rgba(255,215,0,.45);
+
+}
+
+
+
+/* TOP 2 */
+
+.customer-box.silver:hover::before{
+
+    animation-duration:1.2s;
+
+    filter:
+    drop-shadow(0 0 10px #ffffff)
+    drop-shadow(0 0 22px #cccccc);
+
+}
+
+
+.customer-box.silver:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.35);
+
+}
+
+
+
+/* TOP 3 */
+
+.customer-box.bronze:hover::before{
+
+    animation-duration:1.5s;
+
+    filter:
+    drop-shadow(0 0 10px #cd7f32)
+    drop-shadow(0 0 20px #e7a15a);
+
+}
+
+
+.customer-box.bronze:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 25px rgba(205,127,50,.35);
+
+}
+/* ===========================
+   Rank Spark Effect
+=========================== */
+
+.customer-box.gold::before{
+
+    box-shadow:
+    0 0 20px #FFD700,
+    0 0 40px #FFD700;
+
+}
+
+
+.customer-box.gold{
+
+    animation:
+    goldenPulse 2s infinite;
+
+}
+
+
+@keyframes goldenPulse{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 20px rgba(255,215,0,.3);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 45px rgba(255,215,0,.7);
+
+    }
 
 }
