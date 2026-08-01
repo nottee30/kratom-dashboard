@@ -306,7 +306,7 @@ onclick="goPay('${c.name}')">
 
 <p>
 
-${c.water} ขวด •
+${c.water} ขวด • ${c.waterPrice.toLocaleString("th-TH")} บาท
 
 </p>
 
@@ -318,7 +318,7 @@ ${c.water} ขวด •
 
 <p>
 
-${c.herb35} ขวด •
+${c.herb35} ขวด • ${c.herb35Price.toLocaleString("th-TH")} บาท
 
 </p>
 
@@ -330,7 +330,7 @@ ${c.herb35} ขวด •
 
 <p>
 
-${c.herb55} ขวด •
+${c.herb55} ขวด • ${c.herb55Price.toLocaleString("th-TH")} บาท
 
 </p>
 
@@ -342,7 +342,7 @@ ${c.herb55} ขวด •
 
 <p>
 
-${c.cigarette} ซอง •
+${c.cigarette} ซอง • ${c.cigarettePrice.toLocaleString("th-TH")} บาท
 
 </p>
 
@@ -354,7 +354,7 @@ ${c.cigarette} ซอง •
 
 <p>
 
-${c.carton} •
+${c.carton} หีบ • ${c.cartonPrice.toLocaleString("th-TH")} บาท
 
 </p>
 
