@@ -1097,74 +1097,6 @@ box-shadow:
 
 }
 /* ===========================
-   Animated Border
-=========================== */
-
-#customerCard::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-3px;
-
-    border-radius:24px;
-
-    background:
-    conic-gradient(
-
-    from 0deg,
-
-    transparent,
-
-    #ffd700,
-
-    transparent,
-
-    #ffd700,
-
-    transparent
-
-    );
-
-    animation:borderRotate 4s linear infinite;
-
-    z-index:-2;
-
-}
-
-#customerCard::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:3px;
-
-    background:#111827;
-
-    border-radius:20px;
-
-    z-index:-1;
-
-}
-
-@keyframes borderRotate{
-
-    from{
-
-        transform:rotate(0deg);
-
-    }
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
-}
-/* ===========================
    Rank Border
 =========================== */
 
@@ -1172,9 +1104,138 @@ box-shadow:
 
     position:relative;
 
+    overflow:hidden;
+
     border-radius:22px;
 
-    overflow:hidden;
+    background:#1e293b;
+
+    border:2px solid rgba(255,255,255,.08);
+
+}
+.customer-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:22px;
+
+    padding:2px;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:.35s;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+/* ===========================
+   Gold Border
+=========================== */
+
+.customer-box.gold::before{
+
+    opacity:1;
+
+    background:
+    conic-gradient(
+
+    from 0deg,
+
+    transparent 0deg,
+
+    transparent 300deg,
+
+    #FFD700 320deg,
+
+    #FFF8B0 330deg,
+
+    #FFFFFF 336deg,
+
+    #FFD700 342deg,
+
+    transparent 360deg
+
+    );
+
+    animation:borderGold 2s linear infinite;
+
+}
+
+/* ===========================
+   Silver Border
+=========================== */
+
+.customer-box.silver::before{
+
+    opacity:1;
+
+    background:
+    conic-gradient(
+
+    from 0deg,
+
+    transparent 0deg,
+
+    transparent 300deg,
+
+    #ECECEC 320deg,
+
+    #FFFFFF 330deg,
+
+    #ECECEC 336deg,
+
+    #CFCFCF 342deg,
+
+    transparent 360deg
+
+    );
+
+    animation:borderSilver 2s linear infinite;
+
+}
+
+/* ===========================
+   Bronze Border
+=========================== */
+
+.customer-box.bronze::before{
+
+    opacity:1;
+
+    background:
+    conic-gradient(
+
+    from 0deg,
+
+    transparent 0deg,
+
+    transparent 300deg,
+
+    #CD7F32 320deg,
+
+    #FFD09B 330deg,
+
+    #FFF1DE 336deg,
+
+    #CD7F32 342deg,
+
+    transparent 360deg
+
+    );
+
+    animation:borderBronze 2s linear infinite;
 
 }
 
@@ -1254,6 +1315,35 @@ box-shadow:
     50%{
 
         transform:rotate(40deg) translateY(-3px);
+
+    }
+
+}
+@keyframes borderGold{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes borderSilver{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes borderBronze{
+
+    to{
+
+        transform:rotate(360deg);
 
     }
 
