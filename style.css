@@ -1174,3 +1174,295 @@ box-shadow:
     }
 
 }
+/* ===========================
+   Rank Border
+=========================== */
+
+.customer-box{
+
+    position:relative;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+}
+
+/* อันดับ 1 */
+
+.customer-box.gold{
+
+    box-shadow:
+    0 0 20px rgba(255,215,0,.45);
+
+    animation:goldAura 2.5s ease-in-out infinite;
+
+}
+/* อันดับ 2 */
+
+.customer-box.silver{
+
+    box-shadow:
+    0 0 18px rgba(220,220,220,.40);
+
+    animation:silverAura 2.5s ease-in-out infinite;
+
+}
+
+/* อันดับ 3 */
+
+.customer-box.bronze{
+
+    box-shadow:
+    0 0 18px rgba(205,127,50,.40);
+
+    animation:bronzeAura 2.5s ease-in-out infinite;
+
+}
+/* ===== Animated Rank Border ===== */
+
+
+.customer-box.gold::before{
+
+    background:
+    conic-gradient(
+
+    #FFD700,
+    #fff3a0,
+    #FFD700,
+    #ffcc00,
+    #FFD700
+
+    );
+
+}
+
+.customer-box.silver::before{
+
+    background:
+    conic-gradient(
+
+    #ffffff,
+    #d6d6d6,
+    #ffffff,
+    #bbbbbb,
+    #ffffff
+
+    );
+
+}
+
+.customer-box.bronze::before{
+
+    background:
+    conic-gradient(
+
+    #CD7F32,
+    #ffb36a,
+    #CD7F32,
+    #a95d17,
+    #CD7F32
+
+    );
+
+}
+
+/*==========================
+ Premium Animated Border
+==========================*/
+
+.customer-box{
+
+    position:relative;
+
+    border-radius:22px;
+
+    isolation:isolate;
+
+}
+
+.customer-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:24px;
+
+    padding:2px;
+
+    background:transparent;
+
+    z-index:-2;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.customer-box.gold::before{
+
+    opacity:1;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #ffd700,
+    #fff8b0,
+    #ffd700,
+    transparent);
+
+    background-size:300% 300%;
+
+    animation:goldFlow 2.8s linear infinite;
+
+}
+
+.customer-box.silver::before{
+
+    opacity:1;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #ffffff,
+    #dcdcdc,
+    #ffffff,
+    transparent);
+
+    background-size:300% 300%;
+
+    animation:silverFlow 2.8s linear infinite;
+
+}
+
+.customer-box.bronze::before{
+
+    opacity:1;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #CD7F32,
+    #ffbf80,
+    #CD7F32,
+    transparent);
+
+    background-size:300% 300%;
+
+    animation:bronzeFlow 2.8s linear infinite;
+
+}
+
+@keyframes goldFlow{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    100%{
+
+        background-position:300% 50%;
+
+    }
+
+}
+
+@keyframes silverFlow{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    100%{
+
+        background-position:300% 50%;
+
+    }
+
+}
+
+@keyframes bronzeFlow{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    100%{
+
+        background-position:300% 50%;
+
+    }
+
+}
+@keyframes goldAura{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 18px rgba(255,215,0,.35),
+        0 0 35px rgba(255,215,0,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 28px rgba(255,215,0,.80),
+        0 0 55px rgba(255,215,0,.45);
+
+    }
+
+}
+
+@keyframes silverAura{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 18px rgba(230,230,230,.30),
+        0 0 35px rgba(230,230,230,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 28px rgba(255,255,255,.65),
+        0 0 55px rgba(255,255,255,.30);
+
+    }
+
+}
+
+@keyframes bronzeAura{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 18px rgba(205,127,50,.30),
+        0 0 35px rgba(205,127,50,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 28px rgba(205,127,50,.65),
+        0 0 55px rgba(205,127,50,.35);
+
+    }
+
+}
