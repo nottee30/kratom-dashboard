@@ -29,7 +29,7 @@ async function loadData(firstLoad = false){
 
         createLeaderboard();
 
-        renderCustomers(customers);
+        createCustomerDropdown();
 
         document.getElementById("updateTime").innerHTML =
         "อัปเดตล่าสุด : " +
@@ -42,7 +42,26 @@ async function loadData(firstLoad = false){
     }
 
 }
+function createCustomerDropdown(){
 
+    const select =
+    document.getElementById("customerSelect");
+
+    if(!select) return;
+
+    select.innerHTML =
+    '<option value="">-- เลือกรายชื่อ --</option>';
+
+    customers.forEach(c=>{
+
+        select.innerHTML +=
+        `<option value="${c.name}">
+        ${c.name}
+        </option>`;
+
+    });
+
+}
 function updateSummary(){
 
     let totalMoney = 0;
@@ -85,18 +104,23 @@ function createLeaderboard(){
     const sortData =
     [...customers].sort((a,b)=>b.total-a.total);
 
-    sortData.forEach((c,index)=>{
+    const top3 =
+    sortData.slice(0,3);
 
-        let icon = "🏅";
+    const bottom2 =
+    sortData.slice(-2);
 
-        if(index===0) icon="🥇";
-        if(index===1) icon="🥈";
-        if(index===2) icon="🥉";
+    top3.forEach((c,index)=>{
 
-        board.innerHTML +=
+    let icon="🏅";
 
+    if(index===0) icon="🥇";
+    if(index===1) icon="🥈";
+    if(index===2) icon="🥉";
+
+    board.innerHTML +=
 `
-<div class="rank">
+<div class="rank top${index+1}">
 
 <div class="rank-name">
 
@@ -112,9 +136,72 @@ ${c.total.toLocaleString("th-TH")} บาท
 
 </div>
 `;
+});
 
-    });
+    board.innerHTML +=
+`
+    <div class="rank-gap">
 
+    ━━━━━━━━━━━━
+
+    <br>
+
+    ⬇ อีก
+    ${customers.length-5}
+    อันดับ
+
+    <br>
+
+    ━━━━━━━━━━━━
+
+    </div>
+    `;
+
+     board.innerHTML +=
+`
+    <div class="rank bottom">
+
+    <div>
+
+    ⚠ รองสุดท้าย
+
+    <br>
+
+    ${bottom2[0].name}
+
+    </div>
+
+    <div>
+
+    ${bottom2[0].total.toLocaleString("th-TH")}
+    บาท
+
+    </div>
+
+    </div>
+
+    <div class="rank last">
+
+    <div>
+
+    💀 สุดท้าย
+
+    <br>
+
+    ${bottom2[1].name}
+
+    </div>
+
+    <div>
+
+    ${bottom2[1].total.toLocaleString("th-TH")}
+    บาท
+
+    </div>
+
+    </div>
+    `;   
+         
 }
 function renderCustomers(data){
 
@@ -383,6 +470,17 @@ showCustomer = function(name){
 
 }
 
+document
+.getElementById("customerSelect")
+.addEventListener("change",function(){
+
+    if(this.value){
+
+        showCustomer(this.value);
+
+    }
+
+});
 window.onload = async function(){
 
     await loadData(true);
