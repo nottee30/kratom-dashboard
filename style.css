@@ -1570,3 +1570,38 @@ box-shadow:
     }
 
 }
+.spark{
+
+    position:absolute;
+
+    top:10px;
+
+    left:20px;
+
+    font-size:22px;
+
+    animation:sparkMove 2s infinite;
+
+}
+
+
+@keyframes sparkMove{
+
+    0%,100%{
+
+        opacity:.3;
+
+        transform:translateY(0);
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+        transform:translateY(-8px);
+
+    }
+
+}
