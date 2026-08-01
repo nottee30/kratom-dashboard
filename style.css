@@ -1605,3 +1605,93 @@ box-shadow:
     }
 
 }
+/* ===========================
+   Premium Summary Card
+=========================== */
+
+.summary-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* แสงวิ่งบนการ์ด */
+
+.summary-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.25),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:summaryShine 4s infinite;
+
+}
+
+
+@keyframes summaryShine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+
+    40%{
+
+        left:130%;
+
+    }
+
+
+    100%{
+
+        left:130%;
+
+    }
+
+}
+
+
+/* เวลา Hover */
+
+.summary-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#22c55e;
+
+    box-shadow:
+
+    0 20px 45px rgba(34,197,94,.25);
+
+}
