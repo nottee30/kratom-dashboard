@@ -304,9 +304,11 @@ onclick="goPay('${c.name}')">
 
 <h3>🥤 น้ำ</h3>
 
-<p>${c.water} ขวด</p>
+<p>
 
-<b>${c.waterPrice.toLocaleString("th-TH")} บาท</b>
+${c.water} ขวด •
+
+</p>
 
 </div>
 
@@ -314,9 +316,11 @@ onclick="goPay('${c.name}')">
 
 <h3>💊 ยา69</h3>
 
-<p>${c.herb35} ขวด</p>
+<p>
 
-<b>${c.herb35Price.toLocaleString("th-TH")} บาท</b>
+${c.herb35} ขวด •
+
+</p>
 
 </div>
 
@@ -324,9 +328,11 @@ onclick="goPay('${c.name}')">
 
 <h3>💊 ยา</h3>
 
-<p>${c.herb55} ขวด</p>
+<p>
 
-<b>${c.herb55Price.toLocaleString("th-TH")} บาท</b>
+${c.herb55} ขวด •
+
+</p>
 
 </div>
 
@@ -334,9 +340,11 @@ onclick="goPay('${c.name}')">
 
 <h3>🚬 บุหรี่</h3>
 
-<p>${c.cigarette} ซอง</p>
+<p>
 
-<b>${c.cigarettePrice.toLocaleString("th-TH")} บาท</b>
+${c.cigarette} ซอง •
+
+</p>
 
 </div>
 
@@ -344,9 +352,11 @@ onclick="goPay('${c.name}')">
 
 <h3>📦 แคทตอล</h3>
 
-<p>${c.carton}</p>
+<p>
 
-<b>${c.cartonPrice.toLocaleString("th-TH")} บาท</b>
+${c.carton} •
+
+</p>
 
 </div>
 
