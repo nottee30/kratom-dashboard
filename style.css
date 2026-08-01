@@ -373,9 +373,12 @@ input::placeholder{
 
     align-items:center;
 
-    transition:.25s;
-
     border:1px solid rgba(255,255,255,.05);
+
+    transition:.25s;
+    
+    cursor:pointer;
+
 
 }
 
@@ -897,5 +900,114 @@ body{
 .pay-box{
 
     animation:fadeUp .45s ease;
+
+}
+
+/* ===== Leaderboard Rank Colors ===== */
+
+.rank.top1{
+
+    border:2px solid #FFD700;
+
+    box-shadow:0 0 18px rgba(255,215,0,.35);
+
+}
+
+.rank.top2{
+
+    border:2px solid #C0C0C0;
+
+    box-shadow:0 0 15px rgba(192,192,192,.30);
+
+}
+
+.rank.top3{
+
+    border:2px solid #CD7F32;
+
+    box-shadow:0 0 15px rgba(205,127,50,.30);
+
+}
+
+.rank.bottom{
+
+    border:2px solid #ff9800;
+
+}
+
+.rank.last{
+
+    border:2px solid #ef4444;
+
+}
+
+.rank-gap{
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    padding:18px;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+.rank:hover{
+
+    transform:translateY(-4px) scale(1.02);
+
+}
+.top1:hover{
+
+    box-shadow:
+    0 0 30px rgba(255,215,0,.6);
+
+}
+
+.top2:hover{
+
+    box-shadow:
+    0 0 25px rgba(220,220,220,.5);
+
+}
+
+.top3:hover{
+
+    box-shadow:
+    0 0 25px rgba(205,127,50,.5);
+
+}
+@keyframes glowGold{
+
+0%{
+
+box-shadow:
+0 0 10px rgba(255,215,0,.25);
+
+}
+
+50%{
+
+box-shadow:
+0 0 24px rgba(255,215,0,.55);
+
+}
+
+100%{
+
+box-shadow:
+0 0 10px rgba(255,215,0,.25);
+
+}
+
+}
+.top1{
+
+    animation:
+    glowGold
+    2.5s
+    infinite;
 
 }
