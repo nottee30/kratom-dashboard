@@ -253,7 +253,16 @@ function showCustomer(name){
     customers.find(x=>x.name===name);
 
     if(!c) return;
+    const sound =
+    document.getElementById("rankSound");
 
+    if(sound){
+
+    sound.currentTime=0;
+
+    sound.play();
+
+}
     const rankList =
     [...customers].sort((a,b)=>b.total-a.total);
 
