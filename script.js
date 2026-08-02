@@ -472,24 +472,6 @@ document.getElementById("search").addEventListener("input", function () {
 
 });
 
-    const result =
-    customers.filter(c=>
-
-        c.name
-        .toLowerCase()
-        .includes(keyword)
-
-    );
-
-    renderCustomers(result);
-
-    if(result.length===1){
-
-        showCustomer(result[0].name);
-
-    }
-
-});
 
 function scrollToCustomer(){
 
