@@ -503,17 +503,22 @@ showCustomer = function(name){
 
 }
 
-document
-.getElementById("customerSelect")
-.addEventListener("change",function(){
+const customerSelect =
+document.getElementById("customerSelect");
 
-    if(this.value){
+if(customerSelect){
 
-        showCustomer(this.value);
+    customerSelect.addEventListener("change",function(){
 
-    }
+        if(this.value){
 
-});
+            showCustomer(this.value);
+
+        }
+
+    });
+
+}
 window.onload = async function(){
 
     await loadData(true);
