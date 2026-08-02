@@ -1417,7 +1417,7 @@ box-shadow:
 
 }
 
-.spark::before{
+.spark.gold::before{
 
     content:"";
 
@@ -1426,21 +1426,21 @@ box-shadow:
     inset:-20px;
 
     background-image:
-    radial-gradient(#fff9b0 1.8px,transparent 2px),
-    radial-gradient(#ffd700 1.5px,transparent 2px),
-    radial-gradient(#ffffff 1px,transparent 2px);
+    radial-gradient(#fff8b0 2px,transparent 2px),
+    radial-gradient(#ffd700 2px,transparent 2px),
+    radial-gradient(#ffffff 1.5px,transparent 2px);
 
     background-size:
-    80px 80px,
-    120px 120px,
-    160px 160px;
+    70px 70px,
+    110px 110px,
+    150px 150px;
 
-    animation:sparkMove 12s linear infinite;
+    animation:sparkMove 10s linear infinite;
 
-    opacity:.9;
+    opacity:.95;
 
 }
-.spark::after{
+.spark.silver::before{
 
     content:"";
 
@@ -1449,16 +1449,37 @@ box-shadow:
     inset:-20px;
 
     background-image:
-    radial-gradient(#ffffff 1.5px,transparent 2px),
-    radial-gradient(#ffe66d 1.5px,transparent 2px);
+    radial-gradient(#ffffff 2px,transparent 2px),
+    radial-gradient(#dfe6e9 2px,transparent 2px);
 
     background-size:
-    100px 100px,
+    90px 90px,
     140px 140px;
 
-    animation:sparkMoveReverse 16s linear infinite;
+    animation:sparkMove 16s linear infinite;
 
-    opacity:.6;
+    opacity:.7;
+
+}
+.spark.bronze::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    background-image:
+    radial-gradient(#ffcf7d 2px,transparent 2px),
+    radial-gradient(#cd7f32 2px,transparent 2px);
+
+    background-size:
+    90px 90px,
+    140px 140px;
+
+    animation:sparkMove 20s linear infinite;
+
+    opacity:.65;
 
 }
 @keyframes twinkle{
