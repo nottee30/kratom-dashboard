@@ -285,12 +285,24 @@ function showCustomer(name){
 `
 <div class="customer-box ${rankClass}">
 
-${rank===1 ? '<div class="spark">✨ ✨ ✨</div>' : ''}
+${rank===1 ? `
+<div class="rank-ribbon gold">
+👑 TOP BUYER
+</div>
+<div class="spark"></div>
+` : ''}
 
-${rank===2 ? '<div class="rank-ribbon silver">🥈 TOP 2</div>' : ''}
+${rank===2 ? `
+<div class="rank-ribbon silver">
+🥈 TOP 2
+</div>
+` : ''}
 
-${rank===3 ? '<div class="rank-ribbon bronze">🥉 TOP 3</div>' : ''}
-
+${rank===3 ? `
+<div class="rank-ribbon bronze">
+🥉 TOP 3
+</div>
+` : ''}
 <div class="customer-name">
 
 👤 ${c.name}
