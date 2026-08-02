@@ -389,14 +389,7 @@ input::placeholder{
 
 #list{
 
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-    gap:18px;
-
-    margin-bottom:40px;
-
+    display:none;
 }
 
 .customer{
