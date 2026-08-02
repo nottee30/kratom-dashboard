@@ -1190,8 +1190,8 @@ box-shadow:
     animation:borderGold 2s linear infinite;
 
     filter:
-    drop-shadow(0 0 8px #FFD700)
-    drop-shadow(0 0 18px #FFD700);
+    box-shadow:
+    0 0 10px #FFD700;
 
 }
 
@@ -1220,11 +1220,11 @@ box-shadow:
 
     );
 
-    animation:borderSpin 2.3s linear infinite;
+    animation:borderSilver 2.3s linear infinite;
 
     filter:
-    drop-shadow(0 0 8px #dfe6e9);
-
+    box-shadow:
+    0 0 10px #dfe6e9;
 }
 /* ===========================
    Bronze Border
@@ -1251,10 +1251,11 @@ box-shadow:
 
     );
 
-    animation:borderSpin 2.8s linear infinite;
+    animation:borderBronze 2.8s linear infinite;
 
     filter:
-    drop-shadow(0 0 8px #cd7f32);
+    box-shadow:
+    0 0 10px #cd7f32;
 
 }
 
@@ -1485,7 +1486,25 @@ box-shadow:
     animation:twinkle 1.5s ease-in-out infinite reverse;
 
 }
+@keyframes twinkle{
 
+    0%,100%{
+
+        opacity:.3;
+
+        transform:scale(.9);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.15);
+
+    }
+
+}
 @keyframes starFloatTop{
 
     0%,100%{
@@ -1825,25 +1844,7 @@ box-shadow:
     0 20px 45px rgba(34,197,94,.25);
 
 }
-@keyframes twinkle{
 
-    0%,100%{
-
-        opacity:.3;
-
-        transform:scale(.9);
-
-    }
-
-    50%{
-
-        opacity:1;
-
-        transform:scale(1.15);
-
-    }
-
-}
 @keyframes borderSpin{
 
     from{
