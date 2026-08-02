@@ -1163,22 +1163,32 @@ box-shadow:
 
     position:relative;
 
-    border-radius:22px;
-
     overflow:hidden;
+
+    border-radius:22px;
 
     isolation:isolate;
 
+}
+
+.customer-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-2;
+
     background:
-
     url("img/customer-normal.png")
-
     center/100% 100%
-
     no-repeat;
 
 }
-.customer-box.gold{
+
+.customer-box.gold::before{
 
     background:
     url("img/customer-gold.png")
@@ -1187,7 +1197,7 @@ box-shadow:
 
 }
 
-.customer-box.silver{
+.customer-box.silver::before{
 
     background:
     url("img/customer-silver.png")
@@ -1196,7 +1206,7 @@ box-shadow:
 
 }
 
-.customer-box.bronze{
+.customer-box.bronze::before{
 
     background:
     url("img/customer-bronze.png")
@@ -1205,7 +1215,7 @@ box-shadow:
 
 }
 
-.customer-box.last{
+.customer-box.last::before{
 
     background:
     url("img/customer-last.png")
