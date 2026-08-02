@@ -1189,7 +1189,6 @@ box-shadow:
 
     animation:borderGold 2s linear infinite;
 
-    filter:
     box-shadow:
     0 0 10px #FFD700;
 
@@ -1222,7 +1221,6 @@ box-shadow:
 
     animation:borderSilver 2.3s linear infinite;
 
-    filter:
     box-shadow:
     0 0 10px #dfe6e9;
 }
@@ -1253,7 +1251,6 @@ box-shadow:
 
     animation:borderBronze 2.8s linear infinite;
 
-    filter:
     box-shadow:
     0 0 10px #cd7f32;
 
