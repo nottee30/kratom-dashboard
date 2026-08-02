@@ -1242,20 +1242,24 @@ box-shadow:
 
     position:absolute;
 
-    inset:3px;          /* เดิม 3px */
+    inset:8px;
 
-    background:transparent;
+    border-radius:18px;
 
-    border-radius:20px; /* เดิม 19px */
+    background:rgba(8,12,22,.28);
 
-    z-index:0;
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+    z-index:1;
 
 }
 .customer-box > *{
 
     position:relative;
 
-    z-index:2;
+    z-index:10;
 
 }
 /* ===========================
@@ -1267,7 +1271,7 @@ box-shadow:
     opacity:1;
 
     background:
-    conic-gradient(
+    repeating-conic-gradient(
 
         from 0deg,
 
