@@ -1326,6 +1326,87 @@ box-shadow:
     box-shadow:0 0 20px rgba(205,127,50,.4);
 
 }
+/* ===========================
+   Spark Effect
+=========================== */
+
+.spark{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+
+.spark::before{
+
+    content:"✨";
+
+    position:absolute;
+
+    top:20px;
+
+    left:-30px;
+
+    font-size:20px;
+
+    animation:sparkMove 3s linear infinite;
+
+}
+
+.spark::after{
+
+    content:"⭐";
+
+    position:absolute;
+
+    bottom:25px;
+
+    right:-30px;
+
+    font-size:18px;
+
+    animation:sparkMoveReverse 3.5s linear infinite;
+
+}
+
+@keyframes sparkMove{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(420px);
+
+    }
+
+}
+
+@keyframes sparkMoveReverse{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-420px);
+
+    }
+
+}
 
 @keyframes ribbonFloat{
 
