@@ -1202,36 +1202,30 @@ box-shadow:
 .customer-box.silver::before{
 
     opacity:1;
-    z-index:0;
 
     background:
-    conic-gradient(
+    repeating-conic-gradient(
 
-    from 0deg,
+        from 0deg,
 
-    transparent 0deg,
+        transparent 0deg 18deg,
 
-    transparent 300deg,
+        #dfe6e9 18deg 20deg,
 
-    #ECECEC 320deg,
+        #ffffff 20deg 21deg,
 
-    #FFFFFF 330deg,
+        #dfe6e9 21deg 23deg,
 
-    #ECECEC 336deg,
-
-    #CFCFCF 342deg,
-
-    transparent 360deg
+        transparent 23deg 40deg
 
     );
 
-    animation:borderSilver 2s linear infinite;
+    animation:borderSpin 2.3s linear infinite;
+
     filter:
-    drop-shadow(0 0 8px #ffd700)
-    drop-shadow(0 0 18px #ffd700);
+    drop-shadow(0 0 8px #dfe6e9);
 
 }
-
 /* ===========================
    Bronze Border
 =========================== */
@@ -1239,35 +1233,30 @@ box-shadow:
 .customer-box.bronze::before{
 
     opacity:1;
-    z-index:0;
 
     background:
-    conic-gradient(
+    repeating-conic-gradient(
 
-    from 0deg,
+        from 0deg,
 
-    transparent 0deg,
+        transparent 0deg 18deg,
 
-    transparent 300deg,
+        #cd7f32 18deg 20deg,
 
-    #CD7F32 320deg,
+        #ffd6a0 20deg 21deg,
 
-    #FFD09B 330deg,
+        #cd7f32 21deg 23deg,
 
-    #FFF1DE 336deg,
-
-    #CD7F32 342deg,
-
-    transparent 360deg
+        transparent 23deg 40deg
 
     );
 
-    animation:borderBronze 2s linear infinite;
-    filter:
-    drop-shadow(0 0 8px #cd7f32)
-    drop-shadow(0 0 15px #e7a15a);
-}
+    animation:borderSpin 2.8s linear infinite;
 
+    filter:
+    drop-shadow(0 0 8px #cd7f32);
+
+}
 
 /*==========================
  Rank Ribbon
@@ -1305,31 +1294,118 @@ box-shadow:
 
 .rank-ribbon.gold{
 
-    background:linear-gradient(90deg,#FFD700,#FFB800);
+    position:absolute;
 
-    color:#111;
+    top:14px;
 
-    box-shadow:0 0 20px rgba(255,215,0,.5);
+    right:-42px;
+
+    width:155px;
+
+    text-align:center;
+
+    padding:8px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #f7d24b,
+        #ffbf00,
+        #d99b00
+    );
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transform:rotate(45deg);
+
+    box-shadow:
+    0 6px 18px rgba(255,193,7,.45);
+
+    z-index:20;
 
 }
 
 .rank-ribbon.silver{
 
-    background:linear-gradient(90deg,#ECECEC,#BEBEBE);
+    position:absolute;
 
-    color:#111;
+    top:14px;
 
-    box-shadow:0 0 20px rgba(255,255,255,.35);
+    right:-42px;
+
+    width:155px;
+
+    text-align:center;
+
+    padding:8px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #dfe4ea,
+        #a4b0be,
+        #747d8c
+    );
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transform:rotate(45deg);
+
+    box-shadow:
+    0 6px 18px rgba(180,180,180,.4);
+
+    z-index:20;
 
 }
 
 .rank-ribbon.bronze{
 
-    background:linear-gradient(90deg,#CD7F32,#E7A15A);
+    position:absolute;
+
+    top:14px;
+
+    right:-42px;
+
+    width:155px;
+
+    text-align:center;
+
+    padding:8px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #d48a4d,
+        #b87333,
+        #8c5a2b
+    );
 
     color:#fff;
 
-    box-shadow:0 0 20px rgba(205,127,50,.4);
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    transform:rotate(45deg);
+
+    box-shadow:
+    0 6px 18px rgba(184,115,51,.4);
+
+    z-index:20;
 
 }
 /* ===========================
@@ -1364,45 +1440,49 @@ box-shadow:
 
 .spark::before{
 
-    content:"✦ ✧ ✦";
+    content:"✦ ✦ ✦ ✦ ✦";
 
     position:absolute;
 
-    top:-8px;
+    width:100%;
 
-    left:50%;
+    top:-12px;
 
-    transform:translateX(-50%);
+    left:0;
 
-    color:#ffe66d;
+    text-align:center;
 
-    font-size:18px;
+    color:#fff4a3;
 
-    letter-spacing:12px;
+    font-size:13px;
 
-    animation:starFloatTop 2s ease-in-out infinite;
+    letter-spacing:10px;
+
+    animation:twinkle 1.5s ease-in-out infinite;
 
 }
 
 .spark::after{
 
-    content:"✦ ✧ ✦";
+    content:"✦ ✦ ✦ ✦ ✦";
 
     position:absolute;
 
-    bottom:-8px;
+    width:100%;
 
-    left:50%;
+    bottom:-12px;
 
-    transform:translateX(-50%);
+    left:0;
 
-    color:#ffe66d;
+    text-align:center;
 
-    font-size:18px;
+    color:#fff4a3;
 
-    letter-spacing:12px;
+    font-size:13px;
 
-    animation:starFloatBottom 2s ease-in-out infinite;
+    letter-spacing:10px;
+
+    animation:twinkle 1.5s ease-in-out infinite reverse;
 
 }
 
@@ -1539,16 +1619,35 @@ box-shadow:
 
 /* TOP 1 */
 
-.customer-box.gold:hover::before{
+.customer-box.gold::before{
 
-    animation-duration:.8s;
+    opacity:1;
+
+    background:
+    repeating-conic-gradient(
+
+        from 0deg,
+
+        transparent 0deg 18deg,
+
+        #ffd700 18deg 20deg,
+
+        #ffffff 20deg 21deg,
+
+        #ffd700 21deg 23deg,
+
+        transparent 23deg 40deg
+
+    );
+
+    animation:borderSpin 1.8s linear infinite;
 
     filter:
-    drop-shadow(0 0 12px #FFD700)
-    drop-shadow(0 0 30px #FFD700);
+    drop-shadow(0 0 6px #ffd700)
+    drop-shadow(0 0 14px #ffea00)
+    drop-shadow(0 0 20px #fff59d);
 
 }
-
 
 .customer-box.gold:hover{
 
@@ -1724,6 +1823,25 @@ box-shadow:
     box-shadow:
 
     0 20px 45px rgba(34,197,94,.25);
+
+}
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.3;
+
+        transform:scale(.9);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.15);
+
+    }
 
 }
 @keyframes borderSpin{
