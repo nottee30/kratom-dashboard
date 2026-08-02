@@ -504,19 +504,17 @@ document.getElementById("search").addEventListener("input", function () {
         return;
     }
 
-    const result = customers.filter(c =>
-        c.name.toLowerCase().includes(keyword)
+    const exact = result.find(
+        c => c.name.toLowerCase() === keyword
     );
 
-    renderCustomers(result);
+    if(exact){
 
-    if(result.length > 0){
-
-        showCustomer(result[0].name);
+        showCustomer(exact.name);
 
     }else{
 
-        document.getElementById("customerCard").style.display = "none";
+        document.getElementById("customerCard").style.display="none";
 
     }
 
