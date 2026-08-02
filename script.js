@@ -441,26 +441,36 @@ ${c.free}
 `;
 
 }
-document
-.getElementById("search")
-.addEventListener("input",function(){
+document.getElementById("search").addEventListener("input", function () {
 
-    const keyword =
-    this.value
-    .trim()
-    .toLowerCase();
+    const keyword = this.value.trim().toLowerCase();
 
-    if(keyword===""){
+    if(keyword === ""){
 
         renderCustomers(customers);
 
-        document
-        .getElementById("customerCard")
-        .style.display="none";
+        document.getElementById("customerCard").style.display = "none";
 
         return;
+    }
+
+    const result = customers.filter(c =>
+        c.name.toLowerCase().includes(keyword)
+    );
+
+    renderCustomers(result);
+
+    if(result.length > 0){
+
+        showCustomer(result[0].name);
+
+    }else{
+
+        document.getElementById("customerCard").style.display = "none";
 
     }
+
+});
 
     const result =
     customers.filter(c=>
