@@ -1426,49 +1426,46 @@ box-shadow:
 
 .spark::before{
 
-    content:"✦ ✦ ✦ ✦ ✦";
+    content:"";
 
     position:absolute;
 
-    width:100%;
+    inset:-20px;
 
-    top:-12px;
+    background-image:
+    radial-gradient(#fff9b0 1.8px,transparent 2px),
+    radial-gradient(#ffd700 1.5px,transparent 2px),
+    radial-gradient(#ffffff 1px,transparent 2px);
 
-    left:0;
+    background-size:
+    80px 80px,
+    120px 120px,
+    160px 160px;
 
-    text-align:center;
+    animation:sparkMove 12s linear infinite;
 
-    color:#fff4a3;
-
-    font-size:13px;
-
-    letter-spacing:10px;
-
-    animation:twinkle 1.5s ease-in-out infinite;
+    opacity:.9;
 
 }
-
 .spark::after{
 
-    content:"✦ ✦ ✦ ✦ ✦";
+    content:"";
 
     position:absolute;
 
-    width:100%;
+    inset:-20px;
 
-    bottom:-12px;
+    background-image:
+    radial-gradient(#ffffff 1.5px,transparent 2px),
+    radial-gradient(#ffe66d 1.5px,transparent 2px);
 
-    left:0;
+    background-size:
+    100px 100px,
+    140px 140px;
 
-    text-align:center;
+    animation:sparkMoveReverse 16s linear infinite;
 
-    color:#fff4a3;
-
-    font-size:13px;
-
-    letter-spacing:10px;
-
-    animation:twinkle 1.5s ease-in-out infinite reverse;
+    opacity:.6;
 
 }
 @keyframes twinkle{
@@ -1780,6 +1777,37 @@ box-shadow:
     to{
 
         transform:rotate(360deg);
+
+    }
+
+}
+@keyframes sparkMove{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes sparkMoveReverse{
+
+    from{
+
+        transform:rotate(360deg);
+
+    }
+
+    to{
+
+        transform:rotate(0deg);
 
     }
 
