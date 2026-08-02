@@ -186,18 +186,27 @@ input::placeholder{
 
 .total-box{
 
-    background:#0f172a;
-
-    border-radius:18px;
-
-    padding:20px;
-
-    text-align:center;
-
-    margin-bottom:25px;
+    background:
+    url("img/detail-normal.png")
+    center/100% 100%
+    no-repeat;
 
 }
+.customer-box.gold .total-box{
+    background:url("img/detail-gold.png") center/100% 100% no-repeat;
+}
 
+.customer-box.silver .total-box{
+    background:url("img/detail-silver.png") center/100% 100% no-repeat;
+}
+
+.customer-box.bronze .total-box{
+    background:url("img/detail-bronze.png") center/100% 100% no-repeat;
+}
+
+.customer-box.last .total-box{
+    background:url("img/detail-last.png") center/100% 100% no-repeat;
+}
 .total-box p{
 
     color:#94a3b8;
@@ -225,7 +234,14 @@ input::placeholder{
 }
 .detail-item{
 
-    background:#0f172a;
+    position:relative;
+
+    background:
+    url("img/detail-normal.png")
+    center/100% 100%
+    no-repeat;
+
+    border:none;
 
     border-radius:18px;
 
@@ -233,12 +249,24 @@ input::placeholder{
 
     text-align:center;
 
-    transition:.25s;
-
     min-height:90px;
 
 }
+.customer-box.gold .detail-item{
+    background:url("img/detail-gold.png") center/100% 100% no-repeat;
+}
 
+.customer-box.silver .detail-item{
+    background:url("img/detail-silver.png") center/100% 100% no-repeat;
+}
+
+.customer-box.bronze .detail-item{
+    background:url("img/detail-bronze.png") center/100% 100% no-repeat;
+}
+
+.customer-box.last .detail-item{
+    background:url("img/detail-last.png") center/100% 100% no-repeat;
+}
 .detail-item:hover{
 
     transform:scale(1.03);
@@ -278,13 +306,51 @@ input::placeholder{
 
 .point-card{
 
-    background:#0f172a;
+    background:
+    url("img/detail-normal.png")
+    center/100% 100%
+    no-repeat;
 
     border-radius:18px;
 
     padding:20px;
 
     text-align:center;
+
+}
+.customer-box.gold .point-card{
+
+    background:
+    url("img/detail-gold.png")
+    center/100% 100%
+    no-repeat;
+
+}
+
+.customer-box.silver .point-card{
+
+    background:
+    url("img/detail-silver.png")
+    center/100% 100%
+    no-repeat;
+
+}
+
+.customer-box.bronze .point-card{
+
+    background:
+    url("img/detail-bronze.png")
+    center/100% 100%
+    no-repeat;
+
+}
+
+.customer-box.last .point-card{
+
+    background:
+    url("img/detail-last.png")
+    center/100% 100%
+    no-repeat;
 
 }
 
@@ -1099,11 +1165,52 @@ box-shadow:
 
     border-radius:22px;
 
-    background:#1e293b;
-
     overflow:hidden;
 
     isolation:isolate;
+
+    background:
+
+    url("img/customer-normal.png")
+
+    center/100% 100%
+
+    no-repeat;
+
+}
+.customer-box.gold{
+
+    background:
+    url("img/customer-gold.png")
+    center/100% 100%
+    no-repeat;
+
+}
+
+.customer-box.silver{
+
+    background:
+    url("img/customer-silver.png")
+    center/100% 100%
+    no-repeat;
+
+}
+
+.customer-box.bronze{
+
+    background:
+    url("img/customer-bronze.png")
+    center/100% 100%
+    no-repeat;
+
+}
+
+.customer-box.last{
+
+    background:
+    url("img/customer-last.png")
+    center/100% 100%
+    no-repeat;
 
 }
 .customer-box::before{
@@ -1137,7 +1244,7 @@ box-shadow:
 
     inset:3px;          /* เดิม 3px */
 
-    background:#1e293b;
+    background:transparent;
 
     border-radius:20px; /* เดิม 19px */
 
