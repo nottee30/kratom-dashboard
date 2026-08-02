@@ -253,6 +253,13 @@ function showCustomer(name){
     customers.find(x=>x.name===name);
 
     if(!c) return;
+
+    const rankList =
+    [...customers].sort((a,b)=>b.total-a.total);
+
+    const rank =
+    rankList.findIndex(x=>x.name===c.name)+1;
+
     const sound =
     document.getElementById("rankSound");
 
@@ -262,34 +269,29 @@ function showCustomer(name){
 
             sound.src="open.mp3";
 
-    }else if(rank===2){
+        }else if(rank===2){
 
             sound.src="top2.mp3";
 
-    }else if(rank===3){
+        }else if(rank===3){
 
             sound.src="top3.mp3";
 
-    }else if(rank===customers.length){
+        }else if(rank===customers.length){
 
             sound.src="last.mp3";
 
-    }else{
+        }else{
 
             sound.src="open.mp3";
 
-    }
+        }
 
     sound.currentTime=0;
 
     sound.play();
 
 }
-    const rankList =
-    [...customers].sort((a,b)=>b.total-a.total);
-
-    const rank =
-    rankList.findIndex(x=>x.name===c.name)+1;
 
     let rankClass="";
 
