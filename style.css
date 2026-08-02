@@ -1136,11 +1136,11 @@ box-shadow:
 
     position:absolute;
 
-    inset:3px;
+    inset:2px;          /* เดิม 3px */
 
     background:#1e293b;
 
-    border-radius:19px;
+    border-radius:20px; /* เดิม 19px */
 
     z-index:0;
 
@@ -1159,33 +1159,33 @@ box-shadow:
 .customer-box.gold::before{
 
     opacity:1;
-    z-index:0;
 
     background:
     conic-gradient(
 
-    from 0deg,
+        from 0deg,
 
-    transparent 0deg,
+        transparent 0deg,
 
-    transparent 300deg,
+        transparent 300deg,
 
-    #FFD700 320deg,
+        #FFD700 320deg,
 
-    #FFF8B0 330deg,
+        #FFF3A0 330deg,
 
-    #FFFFFF 336deg,
+        #FFFFFF 336deg,
 
-    #FFD700 342deg,
+        #FFD700 342deg,
 
-    transparent 360deg
+        transparent 360deg
 
     );
 
     animation:borderGold 2s linear infinite;
+
     filter:
-    drop-shadow(0 0 8px #ffd700)
-    drop-shadow(0 0 18px #ffd700);
+    drop-shadow(0 0 8px #FFD700)
+    drop-shadow(0 0 18px #FFD700);
 
 }
 
@@ -1391,29 +1391,9 @@ box-shadow:
     }
 
 }
-.customer-box.gold::before{
 
-    filter:
-    drop-shadow(0 0 8px #ffd700)
-    drop-shadow(0 0 18px #ffd700);
 
-}
 
-.customer-box.silver::before{
-
-    filter:
-    drop-shadow(0 0 8px #ffffff)
-    drop-shadow(0 0 15px #cccccc);
-
-}
-
-.customer-box.bronze::before{
-
-    filter:
-    drop-shadow(0 0 8px #cd7f32)
-    drop-shadow(0 0 15px #e7a15a);
-
-}
 
 @keyframes lightningPulse{
 
@@ -1433,31 +1413,7 @@ box-shadow:
 }
 
 
-.customer-box.gold::before{
 
-    animation:
-    borderGold 2s linear infinite,
-    lightningPulse .8s infinite;
-
-}
-
-
-.customer-box.silver::before{
-
-    animation:
-    borderSilver 2s linear infinite,
-    lightningPulse .8s infinite;
-
-}
-
-
-.customer-box.bronze::before{
-
-    animation:
-    borderBronze 2s linear infinite,
-    lightningPulse .8s infinite;
-
-}
 /* ===========================
    Rank Power Level
 =========================== */
@@ -1544,24 +1500,6 @@ box-shadow:
 
 }
 
-
-.customer-box.gold{
-
-    animation:
-    goldenPulse 2s infinite;
-
-}
-
-
-@keyframes goldenPulse{
-
-    0%,100%{
-
-        box-shadow:
-        0 0 20px rgba(255,215,0,.3);
-
-    }
-
     50%{
 
         box-shadow:
@@ -1570,31 +1508,6 @@ box-shadow:
     }
 
 }
-.spark{
-
-    position:absolute;
-
-    top:10px;
-
-    left:20px;
-
-    font-size:22px;
-
-    animation:sparkMove 2s infinite;
-
-}
-
-
-@keyframes sparkMove{
-
-    0%,100%{
-
-        opacity:.3;
-
-        transform:translateY(0);
-
-    }
-
 
     50%{
 
