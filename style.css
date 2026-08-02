@@ -1350,70 +1350,101 @@ box-shadow:
 
 }
 
-.spark::before{
-
-    content:"✨";
+.spark{
 
     position:absolute;
 
-    top:8px;
+    inset:0;
 
-    left:-35px;
+    pointer-events:none;
 
-    font-size:20px;
+    z-index:5;
 
-    animation:sparkMove 3s linear infinite;
+}
+
+.spark::before{
+
+    content:"✦ ✧ ✦";
+
+    position:absolute;
+
+    top:-8px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#ffe66d;
+
+    font-size:18px;
+
+    letter-spacing:12px;
+
+    animation:starFloatTop 2s ease-in-out infinite;
 
 }
 
 .spark::after{
 
-    content:"⭐";
+    content:"✦ ✧ ✦";
 
     position:absolute;
 
-    bottom:8px;
+    bottom:-8px;
 
-    right:-35px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#ffe66d;
 
     font-size:18px;
 
-    animation:sparkMoveReverse 3.5s linear infinite;
+    letter-spacing:12px;
+
+    animation:starFloatBottom 2s ease-in-out infinite;
 
 }
 
-@keyframes sparkMove{
+@keyframes starFloatTop{
 
-    from{
+    0%,100%{
 
-        transform:translateX(0);
+        transform:translate(-50%,0);
 
-    }
-
-    to{
-
-        transform:translateX(420px);
+        opacity:.7;
 
     }
 
-}
+    50%{
 
-@keyframes sparkMoveReverse{
+        transform:translate(-50%,-6px);
 
-    from{
-
-        transform:translateX(0);
-
-    }
-
-    to{
-
-        transform:translateX(-420px);
+        opacity:1;
 
     }
 
 }
 
+@keyframes starFloatBottom{
+
+    0%,100%{
+
+        transform:translate(-50%,0);
+
+        opacity:.7;
+
+    }
+
+    50%{
+
+        transform:translate(-50%,6px);
+
+        opacity:1;
+
+    }
+
+}
 @keyframes ribbonFloat{
 
     0%,100%{
