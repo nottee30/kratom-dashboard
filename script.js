@@ -502,15 +502,18 @@ document.getElementById("search").addEventListener("input", function () {
         document.getElementById("customerCard").style.display = "none";
 
         return;
+
     }
 
-    const exact = result.find(
-        c => c.name.toLowerCase() === keyword
+    const result = customers.filter(c =>
+        c.name.toLowerCase().includes(keyword)
     );
 
-    if(exact){
+    renderCustomers(result);
 
-        showCustomer(exact.name);
+    if(result.length === 1){
+
+        showCustomer(result[0].name);
 
     }else{
 
@@ -519,7 +522,6 @@ document.getElementById("search").addEventListener("input", function () {
     }
 
 });
-
 
 function scrollToCustomer(){
 
