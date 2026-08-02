@@ -544,7 +544,7 @@ input::placeholder{
 
     .detail-grid{
 
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
 
     }
 
@@ -1119,7 +1119,7 @@ box-shadow:
 
     position:absolute;
 
-    inset:-3px;
+    inset:-2px;
 
     border-radius:24px;
 
@@ -1142,7 +1142,7 @@ box-shadow:
 
     position:absolute;
 
-    inset:2px;          /* เดิม 3px */
+    inset:3px;          /* เดิม 3px */
 
     background:#1e293b;
 
