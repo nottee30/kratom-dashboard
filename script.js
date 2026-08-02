@@ -334,6 +334,8 @@ ${rank===customers.length ? `
 </div>
 
 <div class="sad-effect"></div>
+
+<div class="rain"></div>
 ` : ''}
 
 <div class="spark bronze"></div>
