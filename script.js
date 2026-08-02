@@ -258,6 +258,28 @@ function showCustomer(name){
 
     if(sound){
 
+        if(rank===1){
+
+            sound.src="open.mp3";
+
+    }else if(rank===2){
+
+            sound.src="top2.mp3";
+
+    }else if(rank===3){
+
+            sound.src="top3.mp3";
+
+    }else if(rank===customers.length){
+
+            sound.src="last.mp3";
+
+    }else{
+
+            sound.src="open.mp3";
+
+    }
+
     sound.currentTime=0;
 
     sound.play();
@@ -274,6 +296,7 @@ function showCustomer(name){
     if(rank===1) rankClass="gold";
     else if(rank===2) rankClass="silver";
     else if(rank===3) rankClass="bronze";
+    else if(rank===customers.length) rankClass="last";
 
     const percent =
     Math.min((c.point/8)*100,100);
@@ -304,6 +327,15 @@ ${rank===3 ? `
 🥉 TOP 3
 </div>
 ` : ''}
+
+${rank===customers.length ? `
+<div class="rank-ribbon last">
+💀 LAST
+</div>
+
+<div class="sad-effect"></div>
+` : ''}
+
 <div class="spark bronze"></div>
 <div class="customer-name">
 
