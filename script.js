@@ -265,7 +265,7 @@ function showCustomer(name){
 
     if(sound){
 
-        if(){
+        if(rank===1){
 
             sound.src="open.mp3";
 
