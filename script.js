@@ -297,21 +297,11 @@ function showCustomer(name){
 
     let rankClass = "";
 
-    if(rank===1){
-        rankClass="gold";
-    }
-    else if(rank===2){
-        rankClass="silver";
-    }
-    else if(rank===3){
-        rankClass="bronze";
-    }
-    else if(rank===customers.length-1){
-        rankClass="bottom";
-    }
-    else if(rank===customers.length){
-        rankClass="last";
-    }
+    if(rank===1) rankClass="gold";
+    else if(rank===2) rankClass="silver";
+    else if(rank===3) rankClass="bronze";
+    else if(rank===customers.length-1) rankClass="bottom2";
+    else if(rank===customers.length) rankClass="last";
 
     const percent =
     Math.min((c.point/8)*100,100);
