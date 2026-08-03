@@ -109,6 +109,13 @@ header p{
     no-repeat;
 
 }
+.customer-box.bottom{
+    background:
+    url("frame-blue.png") 
+    center/100% 100% 
+    no-repeat;
+    
+}
 .summary-card:hover{
 
     transform:translateY(-8px);
@@ -312,6 +319,10 @@ input::placeholder{
 
 .customer-box.last .detail-item{
     background:url("img/detail-last.png") center/100% 100% no-repeat;
+    
+.customer-box.bottom .detail-item{
+    background-image:url("frame-blue.png");
+}
 }
 .detail-item:hover{
 
@@ -1446,6 +1457,7 @@ box-shadow:
 
     z-index:20;
 
+}
 @keyframes twinkle{
 
     0%,100%{
