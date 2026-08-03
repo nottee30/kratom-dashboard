@@ -293,7 +293,6 @@ function showCustomer(name){
 
 }
 
-    let rankClass="";
 
     let rankClass = "";
 
