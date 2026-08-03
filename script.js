@@ -335,8 +335,6 @@ ${rank===customers.length ? `
 💀 LAST
 </div>
 
-<div class="sad-effect"></div>
-
 <div class="rain"></div>
 ` : ''}
 
