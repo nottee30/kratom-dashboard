@@ -318,15 +318,13 @@ input::placeholder{
 }
 
 .customer-box.last .detail-item{
-    background:
-    url("img/detail-last.png")
+    background:url("img/detail-last.png")
     center/100% 100%
     no-repeat;
 }
 
 .customer-box.blue .detail-item{
-    background:
-    url("img/detail-blue.png")
+    background:url("img/detail-blue.png")
     center/100% 100%
     no-repeat;
 }
@@ -1649,7 +1647,14 @@ box-shadow:
     0 0 25px rgba(205,127,50,.35);
 
 }
+.customer-box.blue:hover{
 
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 28px rgba(59,130,246,.45);
+
+}
 /* ===========================
    Premium Summary Card
 =========================== */
@@ -1892,7 +1897,25 @@ box-shadow:
     animation:cardOpen .45s ease;
 
 }
+@keyframes blueAura{
 
+    0%,100%{
+
+        box-shadow:
+        0 0 10px rgba(59,130,246,.20),
+        0 0 20px rgba(59,130,246,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 22px rgba(59,130,246,.55),
+        0 0 55px rgba(59,130,246,.30);
+
+    }
+
+}
 @keyframes cardOpen{
 
     0%{
@@ -1930,5 +1953,10 @@ box-shadow:
         transform:scale(1.05);
 
     }
+
+}
+.customer-box.blue{
+
+    animation:blueAura 3s ease-in-out infinite;
 
 }
