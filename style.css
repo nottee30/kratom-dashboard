@@ -317,8 +317,18 @@ input::placeholder{
     background:url("img/detail-bronze.png") center/100% 100% no-repeat;
 }
 
-.customer-box.last .total-box{
-    background:url("img/detail-last.png") center/100% 100% no-repeat;
+.customer-box.last .detail-item{
+    background:
+    url("img/detail-last.png")
+    center/100% 100%
+    no-repeat;
+}
+
+.customer-box.blue .detail-item{
+    background:
+    url("img/detail-blue.png")
+    center/100% 100%
+    no-repeat;
 }
 .total-box p{
 
@@ -381,7 +391,7 @@ input::placeholder{
     background:url("img/detail-last.png") center/100% 100% no-repeat;
     
 .customer-box.blue .detail-item{
-    background-image:url("detial-blue.png");
+    background-image:url("detail-blue.png");
 }
 }
 .detail-item:hover{
