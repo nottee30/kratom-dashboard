@@ -310,19 +310,6 @@ function showCustomer(name){
 `
 <div class="customer-box ${rankClass}">
 
-<svg class="lightning-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
-
-<rect
-class="lightning-path"
-x="2"
-y="2"
-width="96"
-height="96"
-rx="9"
-ry="9"/>
-
-</svg>
-
 ${rank===1 ? `
 <div class="rank-ribbon gold">
 👑 TOP BUYER
