@@ -1004,14 +1004,6 @@ body{
     center/100% 100%
     no-repeat;
 }
-.rank.bottom2{
-    border:2px solid #8b5cf6;
-    box-shadow:0 0 15px rgba(139,92,246,.35);
-}
-
-.rank.bottom2:hover{
-    box-shadow:0 0 25px rgba(139,92,246,.55);
-}
 
 .rank.last{
     background:
@@ -1268,27 +1260,8 @@ box-shadow:
     no-repeat;
 
 }
-.customer-box.bottom2::before{
-    background:
-    url("img/customer-last.png")
-    center/100% 100%
-    no-repeat;
 
-    filter:
-        hue-rotate(260deg)
-        saturate(1.4)
-        brightness(1.05);
-}
 
-.customer-box.bottom2 .total-box,
-.customer-box.bottom2 .detail-item,
-.customer-box.bottom2 .point-card{
-
-    filter:
-        hue-rotate(260deg)
-        saturate(1.4)
-        brightness(1.05);
-}
 .customer-box::after{
 
     content:"";
