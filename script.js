@@ -267,7 +267,7 @@ function showCustomer(name){
 
         if(rank===1){
 
-            sound.src="open.mp3";
+            sound.src="top1.mp3";
 
         }else if(rank===2){
 
