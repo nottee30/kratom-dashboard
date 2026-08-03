@@ -109,9 +109,9 @@ header p{
     no-repeat;
 
 }
-.customer-box.bottom{
+.customer-box.blue{
     background:
-    url("detail-bottom.png") 
+    url("detail-blue.png") 
     center/100% 100% 
     no-repeat;
     
@@ -320,8 +320,8 @@ input::placeholder{
 .customer-box.last .detail-item{
     background:url("img/detail-last.png") center/100% 100% no-repeat;
     
-.customer-box.bottom .detail-item{
-    background-image:url("frame-blue.png");
+.customer-box.blue .detail-item{
+    background-image:url("detial-blue.png");
 }
 }
 .detail-item:hover{
