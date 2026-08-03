@@ -299,6 +299,7 @@ function showCustomer(name){
     if(rank===1) rankClass="gold";
     else if(rank===2) rankClass="silver";
     else if(rank===3) rankClass="bronze";
+    else if(rank===customers.length-1) rankClass="bottom";
     else if(rank===customers.length) rankClass="last";
 
     const percent =
