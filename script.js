@@ -315,7 +315,6 @@ ${rank===1 ? `
 <div class="rank-ribbon gold">
 👑 TOP BUYER
 </div>
-<div class="spark gold"></div>
 ` : ''}
 
 ${rank===2 ? `
@@ -323,7 +322,7 @@ ${rank===2 ? `
 🥈 TOP 2
 </div>
 ` : ''}
-<div class="spark silver"></div>
+
 
 ${rank===3 ? `
 <div class="rank-ribbon bronze">
@@ -345,7 +344,6 @@ ${rank===customers.length ? `
 <div class="rain"></div>
 ` : ''}
 
-<div class="spark bronze"></div>
 <div class="customer-name">
 
 👤 ${c.name}
