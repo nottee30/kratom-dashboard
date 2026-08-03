@@ -236,14 +236,73 @@ input::placeholder{
 
     margin-bottom:20px;
 
+    position:relative;
+    
+    overflow:hidden;
+
 }
 
+.customer-name::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:nameShine 5s linear infinite;
+
+}
+@keyframes nameShine{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    30%{
+
+        left:140%;
+
+    }
+
+    100%{
+
+        left:140%;
+
+    }
+
+}
 .total-box{
 
     background:
     url("img/detail-normal.png")
     center/100% 100%
     no-repeat;
+    animation:moneyBeat 2.5s ease-in-out infinite;
 
 }
 .customer-box.gold .total-box{
@@ -1780,4 +1839,78 @@ box-shadow:
     to{
         transform:rotate(360deg);
     }
+}
+/* ==========================
+   TOP1 GOLD AURA
+========================== */
+
+.customer-box.gold{
+
+    animation:goldAura 2.8s ease-in-out infinite;
+
+}
+
+@keyframes goldAura{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 10px rgba(255,215,0,.25),
+        0 0 25px rgba(255,215,0,.15);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 22px rgba(255,215,0,.55),
+        0 0 60px rgba(255,215,0,.35);
+
+    }
+
+}
+.customer-box{
+
+    animation:cardOpen .45s ease;
+
+}
+
+@keyframes cardOpen{
+
+    0%{
+
+        transform:scale(.95);
+        opacity:0;
+
+    }
+
+    70%{
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+@keyframes moneyBeat{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
 }
