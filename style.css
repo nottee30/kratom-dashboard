@@ -939,41 +939,32 @@ body{
 /* ===== Leaderboard Rank Colors ===== */
 
 .rank.top1{
-
-    border:2px solid #FFD700;
-
-    box-shadow:0 0 18px rgba(255,215,0,.35);
-
+    background:
+    url("img/customer-gold.png")
+    center/100% 100%
+    no-repeat;
 }
 
 .rank.top2{
-
-    border:2px solid #C0C0C0;
-
-    box-shadow:0 0 15px rgba(192,192,192,.30);
-
+    background:
+    url("img/customer-silver.png")
+    center/100% 100%
+    no-repeat;
 }
 
 .rank.top3{
-
-    border:2px solid #CD7F32;
-
-    box-shadow:0 0 15px rgba(205,127,50,.30);
-
-}
-
-.rank.bottom{
-
-    border:2px solid #ff9800;
-
+    background:
+    url("img/customer-bronze.png")
+    center/100% 100%
+    no-repeat;
 }
 
 .rank.last{
-
-    border:2px solid #ef4444;
-
+    background:
+    url("img/customer-last.png")
+    center/100% 100%
+    no-repeat;
 }
-
 .rank-gap{
 
     text-align:center;
