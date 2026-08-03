@@ -110,8 +110,9 @@ header p{
 
 }
 .customer-box.blue{
+    
     background:
-    url("detail-blue.png") 
+    url("img/detail-blue.png") 
     center/100% 100% 
     no-repeat;
     
