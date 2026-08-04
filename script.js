@@ -158,11 +158,10 @@ ${c.total.toLocaleString("th-TH")} บาท
     `;
 
      board.innerHTML +=
-`
-
+    `
     <div class="rank last">
 
-    <div>
+    <div class="rank-name">
 
     💀 สุดท้าย
 
@@ -172,7 +171,7 @@ ${c.total.toLocaleString("th-TH")} บาท
 
     </div>
 
-    <div>
+    <div class="rank-money">
 
     ${bottom2[1].total.toLocaleString("th-TH")}
     บาท
