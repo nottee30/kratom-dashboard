@@ -159,26 +159,6 @@ ${c.total.toLocaleString("th-TH")} บาท
 
      board.innerHTML +=
 `
-    <div class="rank bottom">
-
-    <div>
-
-    ⚠ รองสุดท้าย
-
-    <br>
-
-    ${bottom2[0].name}
-
-    </div>
-
-    <div>
-
-    ${bottom2[0].total.toLocaleString("th-TH")}
-    บาท
-
-    </div>
-
-    </div>
 
     <div class="rank last">
 
