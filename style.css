@@ -1118,26 +1118,8 @@ body{
     transform:translateY(-4px) scale(1.02);
 
 }
-.top1:hover{
 
-    box-shadow:
-    0 0 30px rgba(255,215,0,.6);
 
-}
-
-.top2:hover{
-
-    box-shadow:
-    0 0 25px rgba(220,220,220,.5);
-
-}
-
-.top3:hover{
-
-    box-shadow:
-    0 0 25px rgba(205,127,50,.5);
-
-}
 @keyframes glowGold{
 
 0%{
