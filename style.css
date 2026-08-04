@@ -57,21 +57,6 @@ header p{
 
 }
 
-.summary-card{
-
-    background:transparent;
-
-    border-radius:18px;
-
-    padding:14px 18px;
-
-    text-align:center;
-
-    transition:.25s;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-
-}
 /* ===== Summary Rank Frame ===== */
 
 .summary-card{
@@ -337,7 +322,7 @@ input::placeholder{
     background:url("img/detail-bronze.png") center/100% 100% no-repeat;
 }
 
-.customer-box.last .detail-item{
+.customer-box.last .total-box{
     background:url("img/detail-last.png")
     center/100% 100%
     no-repeat;
@@ -626,14 +611,6 @@ input::placeholder{
     font-size:20px;
 
     font-weight:bold;
-
-}
-
-.rank:hover{
-
-    transform:translateX(6px);
-
-    background:#273449;
 
 }
 
@@ -1162,12 +1139,6 @@ body{
     line-height:1.8;
 
 }
-.rank:hover{
-
-    transform:translateY(-4px) scale(1.02);
-
-}
-
 
 @keyframes glowGold{
 
@@ -1638,19 +1609,6 @@ box-shadow:
 
 }
 
-/* ===========================
-   Rank Power Level
-=========================== */
-
-
-.customer-box.gold:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-    0 0 35px rgba(255,215,0,.45);
-
-}
 
 /* ===========================
    Premium Summary Card
@@ -1863,13 +1821,11 @@ box-shadow:
 /* ==========================
    TOP1 GOLD AURA
 ========================== */
-
 .customer-box.gold{
 
-    animation:goldAura 2.8s ease-in-out infinite;
-    box-shadow:
-    0 0 18px rgba(255,215,0,.35),
-    0 0 45px rgba(255,215,0,.18);
+    animation:
+    cardOpen .45s ease,
+    goldAura 2.8s ease-in-out infinite;
 
 }
 
@@ -1894,10 +1850,11 @@ box-shadow:
 }
 
 .customer-box.silver{
-    animation:silverAura 2.8s ease-in-out infinite;
-    box-shadow:
-    0 0 18px rgba(210,220,255,.28),
-    0 0 40px rgba(210,220,255,.14);
+
+    animation:
+    cardOpen .45s ease,
+    silverAura 2.8s ease-in-out infinite;
+
 }
 
 @keyframes silverAura{
@@ -1915,17 +1872,14 @@ box-shadow:
     }
 
 }
-.customer-box{
 
-    animation:cardOpen .45s ease;
-
-}
 
 .customer-box.bronze{
-    animation:bronzeAura 2.8s ease-in-out infinite;
-    box-shadow:
-    0 0 18px rgba(214,138,77,.30),
-    0 0 42px rgba(214,138,77,.15);
+
+    animation:
+    cardOpen .45s ease,
+    bronzeAura 2.8s ease-in-out infinite;
+
 }
 
 @keyframes bronzeAura{
@@ -1944,12 +1898,12 @@ box-shadow:
 
 }
 .customer-box.last{
-    animation:lastAura 3.2s ease-in-out infinite;
-    box-shadow:
-    0 0 18px rgba(160,70,70,.28),
-    0 0 42px rgba(120,40,40,.18);
-}
 
+    animation:
+    cardOpen .45s ease,
+    lastAura 3.2s ease-in-out infinite;
+
+}
 @keyframes lastAura{
 
     0%,100%{
@@ -2003,7 +1957,7 @@ box-shadow:
 
     }
 
-}k.last .rank-money{
+}.last .rank-money{
 
     color:#4ade80;
 
