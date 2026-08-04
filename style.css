@@ -1824,8 +1824,12 @@ box-shadow:
 .customer-box.gold{
 
     animation:
-    cardOpen .45s ease,
-    goldAura 2.8s ease-in-out infinite;
+        cardOpen .45s ease,
+        goldAura 2.8s ease-in-out infinite;
+
+    box-shadow:
+        0 0 18px rgba(255,215,0,.35),
+        0 0 45px rgba(255,215,0,.18);
 
 }
 
