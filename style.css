@@ -1600,32 +1600,6 @@ box-shadow:
 
 }
 
-
-
-
-.customer-box.silver:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 0 25px rgba(255,255,255,.35);
-
-}
-
-
-
-/* TOP 3 */
-
-
-.customer-box.bronze:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 0 25px rgba(205,127,50,.35);
-
-}
-
 /* ===========================
    Premium Summary Card
 =========================== */
