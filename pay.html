@@ -53,20 +53,72 @@ id="slip"
 accept="image/*">
 
 
-<button
-id="submitBtn"
-onclick="submitPayment()">
+<!DOCTYPE html>
+<html lang="th">
 
-📤 ส่งสลิป
+<head>
 
-</button>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ชำระเงิน</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="pay-box">
+
+    <div class="pay-header">
+
+        <h1>💳 ชำระเงิน</h1>
+
+        <h2 id="customerName">
+            กำลังโหลด...
+        </h2>
+
+        <p>ยอดที่ต้องชำระ</p>
+
+        <h1 id="amount">
+            0 บาท
+        </h1>
+
+    </div>
+
+    <!-- กรอบ QR -->
+
+    <div class="qr-frame">
+
+        <img
+        src="img/qr.png"
+        class="qr">
+
+    </div>
+
+    <!-- กรอบอัปโหลด -->
+
+    <div class="slip-frame">
+
+        <input
+        type="file"
+        id="slip"
+        accept="image/*">
+
+    </div>
+
+    <button
+    id="submitBtn"
+    onclick="submitPayment()">
+
+        📤 ส่งสลิป
+
+    </button>
 
 </div>
 
-
-
 <script src="pay.js"></script>
-
 
 </body>
 
