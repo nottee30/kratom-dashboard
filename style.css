@@ -28,11 +28,11 @@ input::placeholder{color:#94a3b8;}
 #slip::file-selector-button:hover{background:#1d4ed8;}
 #loading{position:fixed;inset:0;background:#0f172a;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:9999;}
 
+.main-logo{position:relative;z-index:5;display:block;width:220px;max-width:65vw;height:auto;margin:0 auto 18px;animation:logoFloat 4s ease-in-out infinite,logoGlow 2.8s ease-in-out infinite;filter:drop-shadow(0 0 12px rgba(255,215,0,.8))drop-shadow(0 0 26px rgba(0,255,120,.45))drop-shadow(0 0 40px rgba(0,180,255,.35));}
 .welcome{display:block;text-align:center;}
 .welcome h2{margin-bottom:12px;}
 .welcome p{color:#94a3b8;}
 .qr{width:320px;max-width:90%;display:block;margin:30px auto;border-radius:20px;background:white;padding:15px;box-shadow:0 10px 30px rgba(0,0,0,.35);}
-.main-logo{position:relative;z-index:5;display:block;width:220px;max-width:65vw;height:auto;margin:0 auto 18px;animation:logoFloat 4s ease-in-out infinite,logoGlow 2.8s ease-in-out infinite;filter:drop-shadow(0 0 12px rgba(255,215,0,.8))drop-shadow(0 0 26px rgba(0,255,120,.45))drop-shadow(0 0 40px rgba(0,180,255,.35));}
 .loading-logo{width:180px;max-width:70vw;margin-bottom:25px;animation:logoSpin 2.8s linear infinite,loadingGlow 2s ease-in-out infinite;filter:drop-shadow(0 0 15px #ffd700)drop-shadow(0 0 30px #00ff99)drop-shadow(0 0 45px #00cfff);}
 
 .pay-status{margin:10px 0;padding:10px;border-radius:12px;text-align:center;font-weight:bold;background:#e8f5e9;color:#2e7d32;}
