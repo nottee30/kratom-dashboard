@@ -85,7 +85,8 @@ input::placeholder{color:#94a3b8;}
 .total-box p{color:#ffd54f;font-size:22px;font-weight:700;letter-spacing:1px;text-align:center;text-shadow:0 0 8px rgba(255,210,70,.8);}
 .total-box h2{margin-top:12px;font-size:38px;color:#52ff89;line-height:1.2;text-align:center;text-shadow:0 0 10px rgba(0,255,120,.9),0 0 25px rgba(0,255,120,.45);}
 
-.rank{background:#1e293b;border-radius:18px;padding:18px 24px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.05);transition:.25s;cursor:pointer;}
+.rank{background:#1e293b;border-radius:18px;padding:18px 24px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(255,255,255,.05);transition:.25s;cursor:pointer;    position:relative;overflow:visible;}
+.rank::after{content:"";position:absolute;inset:-8px;border-radius:24px;filter:blur(18px);opacity:.7;z-index:-3;}
 .rank-name{font-size:20px;font-weight:bold;text-shadow:0 0 8px rgba(255,255,255,.7),0 0 18px rgba(255,255,255,.35);}
 .rank-money{color:#4ade80;font-size:20px;font-weight:bold;text-shadow:0 0 8px rgba(34,197,94,.9),0 0 20px rgba(34,197,94,.45);}
 .rank-gap{text-align:center;color:#94a3b8;padding:18px;font-size:15px;line-height:1.8;}
@@ -94,7 +95,7 @@ input::placeholder{color:#94a3b8;}
 .rain::before{content:"";position:absolute;inset:-20%;background-image:radial-gradient(circle,rgba(255,255,255,.65) 1px,transparent 2px);background-size:18px 26px;animation:rainFall .45s linear infinite;opacity:.55;}
 
 .top1{animation:glowGold2.5s infinite;}
-.rank.top1{background:url("img/customer-gold.png") center/100% 100% no-repeat;}
+.rank.top1{background:url("img/customer-gold.png") center/100% 100% no-repeat;background:#ffd700;animation:summaryGlow 2.5s ease-in-out infinite;animation:summaryGold 2.8s ease-in-out infinite;}
 .customer-box.gold .total-box{background:url("img/detail-gold.png") center/100% 100% no-repeat;}
 .customer-box.gold .point-card{background:url("img/detail-gold.png")center/100% 100%no-repeat;}
 .customer-box.gold::before{background:url("img/customer-gold.png")center/100% 100%no-repeat;}
@@ -106,7 +107,7 @@ input::placeholder{color:#94a3b8;}
 .summary-card.gold h3{color:#ffe27a;text-shadow:0 0 8px rgba(255,215,0,.8);}
 .summary-card.gold::after{background:#ffd700;animation:summaryGlow 2.5s ease-in-out infinite;}
 
-.rank.top2{background:url("img/customer-silver.png")center/100% 100%no-repeat;}
+.rank.top2{background:url("img/customer-silver.png")center/100% 100%no-repeat;background:#ffffff;animation:summaryGlow 2.5s ease-in-out infinite;animation:summarySilver 2.8s ease-in-out infinite;}
 .customer-box.silver .total-box{background:url("img/detail-silver.png") center/100% 100% no-repeat;}
 .customer-box.silver{animation:cardOpen .45s ease,silverAura 2.8s ease-in-out infinite;}
 .customer-box.silver .point-card{background:url("img/detail-silver.png")center/100% 100%no-repeat;}
@@ -118,7 +119,7 @@ input::placeholder{color:#94a3b8;}
 .summary-card.silver h3{color:#ececec;text-shadow:0 0 8px rgba(255,255,255,.7);}
 .summary-card.silver::after{background:#ffffff;animation:summaryGlow 2.5s ease-in-out infinite;}
 
-.rank.top3{background:url("img/customer-bronze.png")center/100% 100%no-repeat;}
+.rank.top3{background:url("img/customer-bronze.png")center/100% 100%no-repeat;background:#cd7f32;animation:summaryGlow 2.5s ease-in-out infinite;animation:summaryBronze 2.8s ease-in-out infinite;}
 .customer-box.bronze .total-box{background:url("img/detail-bronze.png") center/100% 100% no-repeat;}
 .customer-box.bronze{animation:cardOpen .45s ease,bronzeAura 2.8s ease-in-out infinite;}
 .customer-box.bronze .point-card{background:url("img/detail-bronze.png")center/100% 100%no-repeat;}
@@ -131,7 +132,7 @@ input::placeholder{color:#94a3b8;}
 .summary-card.bronze::after{background:#cd7f32;animation:summaryGlow 2.5s ease-in-out infinite;}
 
 
-.rank.last{background:url("img/customer-last.png")center/100% 100%no-repeat;}
+.rank.last{background:url("img/customer-last.png")center/100% 100%no-repeat;background:#ff4040;animation:summaryGlow 2.5s ease-in-out infinite;animation:summaryLast 2.8s ease-in-out infinite;}
 .customer-box.last .total-box{background:url("img/detail-last.png")center/100% 100%no-repeat;}
 .customer-box.last .point-card{background:url("img/detail-last.png")center/100% 100%no-repeat;}
 .customer-box.last::before{background:url("img/customer-last.png")center/100% 100%no-repeat;}
