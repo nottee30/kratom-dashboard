@@ -42,7 +42,6 @@ input::placeholder{color:#94a3b8;}
 .slip-frame #slip{width:88%;margin:0;}
 .loading-logo{width:180px;max-width:70vw;margin-bottom:25px;animation:logoSpin 2.8s linear infinite,loadingGlow 2s ease-in-out infinite;filter:drop-shadow(0 0 15px #ffd700)drop-shadow(0 0 30px #00ff99)drop-shadow(0 0 45px #00cfff);}
 
-.pay-logo{width:48px;height:auto;display:block;margin:0 auto 8px;filter:drop-shadow(0 0 6px #4fc3ff)drop-shadow(0 0 14px rgba(79,195,255,.6));animation:logoFloat 3s ease-in-out infinite;}
 .pay-status{margin:10px 0;padding:10px;border-radius:12px;text-align:center;font-weight:bold;background:#e8f5e9;color:#2e7d32;}
 .pay-btn{width:100%;margin-top:20px;padding:18px;border:none;border-radius:15px;background:#22c55e;color:white;font-size:22px;font-weight:bold;cursor:pointer;transition:.25s;}
 .pay-btn:hover{background:#16a34a;transform:scale(1.02);}
@@ -181,7 +180,6 @@ input::placeholder{color:#94a3b8;}
 @keyframes lastAura{0%,100%{box-shadow:0 0 10px rgba(120,70,35,.25),0 0 25px rgba(80,45,20,.18);}50%{box-shadow:0 0 22px rgba(170,100,55,.55),0 0 55px rgba(120,70,35,.35);}}
 @keyframes blueAura{0%,100%{box-shadow:0 0 12px rgba(80,180,255,.25),0 0 30px rgba(80,180,255,.15);}50%{box-shadow:0 0 24px rgba(80,180,255,.65),0 0 55px rgba(80,180,255,.35);}}
 
-@keyframes logoFloat{0%,100%{transform:translateY(0px);}50%{transform:translateY(-6px);}}
 @keyframes bgFloat{0%{transform:translate(-30px,-20px) scale(1);}50%{transform:translate(25px,15px) scale(1.08);}100%{transform:translate(-15px,30px) scale(.96);}}                        
 @keyframes bgRotate{from{transform:rotate(0deg) scale(1.1);}to{transform:rotate(360deg) scale(1.1);}}
 @keyframes fadePage{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
