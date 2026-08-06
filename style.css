@@ -75,9 +75,9 @@ input::placeholder{color:#94a3b8;}
 .customer:hover{transform:translateY(-4px);background:#263449;}
 .customer h3{margin-bottom:12px;}
 .customer p{margin:6px 0;color:#cbd5e1;}
-.customer-box{position:relative;overflow:hidden;border-radius:22px;isolation:isolate;}
+.customer-box{position:relative;overflow:visible;border-radius:24px;isolation:isolate;padding:28px;animation:cardOpen .45s ease;}
 .customer-box::before{content:"";position:absolute;inset:0;z-index:-2;background:url("img/customer-normal.png")center/100% 100%no-repeat;}
-.customer-box::after{content:"";position:absolute;inset:8px;border-radius:18px;background:linear-gradient(180deg,rgba(6,10,18,.45),rgba(10,15,26,.25),rgba(6,10,18,.45));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:1;}
+.customer-box::after{content:"";position:absolute;inset:-8px;border-radius:28px;filter:blur(18px);opacity:.75;z-index:-3;animation:summaryGlow 2.5s ease-in-out infinite;}
 .customer-box > *{position:relative;z-index:10;}
 
 .title{margin:30px 0 20px;font-size:28px;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.6),0 0 22px rgba(255,215,0,.35);}
@@ -99,6 +99,7 @@ input::placeholder{color:#94a3b8;}
 .customer-box.gold .total-box{background:url("img/detail-gold.png") center/100% 100% no-repeat;}
 .customer-box.gold .point-card{background:url("img/detail-gold.png")center/100% 100%no-repeat;}
 .customer-box.gold::before{background:url("img/customer-gold.png")center/100% 100%no-repeat;}
+.customer-box.gold::after{background:#ffd700;}
 .customer-box.gold .detail-item{background:url("img/detail-gold.png") center/100% 100% no-repeat;}
 .customer-box.gold{animation:goldAura 2.8s ease-in-out infinite;box-shadow:0 0 18px rgba(255,215,0,.35),0 0 45px rgba(255,215,0,.18);}
 .rank-ribbon.gold{position:absolute;top:14px;right:-42px;width:155px;text-align:center;padding:8px 0;background:linear-gradient(135deg,#f7d24b,#ffbf00,#d99b00);color:#fff;font-size:12px;font-weight:bold;letter-spacing:2px;transform:rotate(45deg);box-shadow:0 6px 18px rgba(255,193,7,.45);z-index:20;}
@@ -112,6 +113,7 @@ input::placeholder{color:#94a3b8;}
 .customer-box.silver .total-box{background:url("img/detail-silver.png") center/100% 100% no-repeat;}
 .customer-box.silver{animation:cardOpen .45s ease,silverAura 2.8s ease-in-out infinite;}
 .customer-box.silver .point-card{background:url("img/detail-silver.png")center/100% 100%no-repeat;}
+.customer-box.silver::after{background:#ffffff;}
 .customer-box.silver::before{background:url("img/customer-silver.png")center/100% 100%no-repeat;}
 .customer-box.silver .detail-item{background:url("img/detail-silver.png") center/100% 100% no-repeat;}
 .rank-ribbon.silver{position:absolute;top:14px;right:-42px;width:155px;text-align:center;padding:8px 0; background:linear-gradient(135deg,#dfe4ea,#a4b0be,#747d8c);color:#fff;font-size:12px;font-weight:bold;letter-spacing:2px;transform:rotate(45deg);box-shadow:0 6px 18px rgba(180,180,180,.4);z-index:20;}
@@ -125,6 +127,7 @@ input::placeholder{color:#94a3b8;}
 .customer-box.bronze .total-box{background:url("img/detail-bronze.png") center/100% 100% no-repeat;}
 .customer-box.bronze{animation:cardOpen .45s ease,bronzeAura 2.8s ease-in-out infinite;}
 .customer-box.bronze .point-card{background:url("img/detail-bronze.png")center/100% 100%no-repeat;}
+.customer-box.bronze::after{background:#cd7f32;}
 .customer-box.bronze::before{background:url("img/customer-bronze.png")center/100% 100%no-repeat;}
 .customer-box.bronze .detail-item{background:url("img/detail-bronze.png") center/100% 100% no-repeat;}
 .rank-ribbon.bronze{position:absolute;top:14px;right:-42px;width:155px;text-align:center;padding:8px 0;background:linear-gradient(135deg,#d48a4d,#b87333,#8c5a2b);color:#fff;font-size:12px;font-weight:bold;letter-spacing:2px;transform:rotate(45deg);box-shadow:0 6px 18px rgba(184,115,51,.4);z-index:20;}
@@ -138,6 +141,7 @@ input::placeholder{color:#94a3b8;}
 .rank.last::after{background:#ff4040;animation:summaryGlow 2.5s ease-in-out infinite;}
 .customer-box.last .total-box{background:url("img/detail-last.png")center/100% 100%no-repeat;}
 .customer-box.last .point-card{background:url("img/detail-last.png")center/100% 100%no-repeat;}
+.customer-box.last::after{background:#ff4040;}
 .customer-box.last::before{background:url("img/customer-last.png")center/100% 100%no-repeat;}
 .customer-box.last .detail-item{background:url("img/detail-last.png") center/100% 100% no-repeat;}
 .customer-box.last{animation:cardOpen .45s ease,lastAura 3.2s ease-in-out infinite;filter:grayscale(.35);}
