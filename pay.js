@@ -76,7 +76,7 @@ async function submitPayment(){
 
     if(!file){
 
-        alert("กรุณาเลือกสลิป");
+        alert("ขอสลิปหน่อย");
 
         return;
 
@@ -85,7 +85,7 @@ async function submitPayment(){
 
     if(!customer){
 
-        alert("ไม่พบข้อมูลลูกค้า");
+        alert("รอแปปดิ๊");
 
         return;
 
@@ -99,7 +99,7 @@ async function submitPayment(){
     button.disabled = true;
 
     button.innerHTML =
-    "⏳ กำลังส่งสลิป...";
+    "⏳ กำลังส่งยอด";
 
 
     const reader =
@@ -158,10 +158,10 @@ async function submitPayment(){
             if(result.includes("OK")){
 
                 button.innerHTML =
-                "✅ ส่งสลิปแล้ว";
+                "✅ หัวจ่ายรับยอด";
 
                 alert(
-                "ส่งสลิปเรียบร้อย รอตรวจสอบ"
+                "ส่งยอดให้หัวจ่ายแล้ว รอตรวจ"
                 );
 
 
@@ -170,7 +170,7 @@ async function submitPayment(){
                 button.disabled = false;
 
                 button.innerHTML =
-                "📤 ส่งสลิป";
+                "📤 ส่งยอด";
 
                 alert(result);
 
@@ -185,7 +185,7 @@ async function submitPayment(){
             button.disabled = false;
 
             button.innerHTML =
-            "📤 ส่งสลิป";
+            "📤 หัวจ่ายรับยอด";
 
 
             alert(
