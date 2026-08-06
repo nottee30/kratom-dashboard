@@ -32,20 +32,20 @@ input::placeholder{color:#94a3b8;}
 .welcome{display:block;text-align:center;}
 .welcome h2{margin-bottom:12px;}
 .welcome p{color:#94a3b8;}
-.qr-frame{position:relative;width:380px;max-width:100%;margin:25px auto;padding:20px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
+.qr-frame{position:relative;width:380px;max-width:100%;margin:25px auto;padding:42px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
 .qr-frame::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.6;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
-.qr{width:100%;display:block;border-radius:12px;background:#fff;padding:10px;}
-.slip-frame{position:relative;width:380px;max-width:100%;margin:25px auto;padding:18px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
+.qr{width:86%;max-width:320px;display:block;border-radius:12px;background:#fff;padding:10px;}
+.slip-frame{position:relative;width:380px;max-width:100%;margin:25px auto;padding:30px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
 .slip-frame::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.6;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
-.slip-frame #slip{width:100%;margin:0;}
+.slip-frame #slip{width:88%;margin:0;}
 .loading-logo{width:180px;max-width:70vw;margin-bottom:25px;animation:logoSpin 2.8s linear infinite,loadingGlow 2s ease-in-out infinite;filter:drop-shadow(0 0 15px #ffd700)drop-shadow(0 0 30px #00ff99)drop-shadow(0 0 45px #00cfff);}
 
 .pay-status{margin:10px 0;padding:10px;border-radius:12px;text-align:center;font-weight:bold;background:#e8f5e9;color:#2e7d32;}
 .pay-btn{width:100%;margin-top:20px;padding:18px;border:none;border-radius:15px;background:#22c55e;color:white;font-size:22px;font-weight:bold;cursor:pointer;transition:.25s;}
 .pay-btn:hover{background:#16a34a;transform:scale(1.02);}
 .pay-header>*{position:relative;z-index:2;}
-.pay-header{position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px 25px;margin-bottom:25px;background:url("img/detail-blue.png") center/100% 100% no-repeat;border:none;border-radius:20px;animation:blueAura 2.8s ease-in-out infinite;box-shadow:0 0 18px rgba(80,180,255,.30),0 0 45px rgba(80,180,255,.18);}.pay-header h1{color:#22c55e;font-size:34px;margin-bottom:15px;}
-.pay-header::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.55;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
+.pay-header{position:relative;background:url("img/detail-blue.png") center/100% 100% no-repeat;padding:28px 20px;min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;animation:blueAura 2.8s ease-in-out infinite;overflow:hidden;}
+.pay-header::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.035;transform:scale(.75);z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
 .pay-header h1{color:#7de8ff;text-shadow:0 0 8px rgba(80,200,255,.8),0 0 18px rgba(80,200,255,.45);}
 .pay-header h2{color:#ffffff;text-shadow:0 0 8px rgba(255,255,255,.8),0 0 18px rgba(255,255,255,.35);}
 .pay-header p{color:#ffd86b;text-shadow:0 0 8px rgba(255,215,0,.6);}
