@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ชำระเงิน</title>
@@ -13,9 +12,8 @@
 
 </head>
 
-
 <body>
-    
+
 <div class="pay-box">
 
     <div class="pay-header">
@@ -32,44 +30,17 @@
             0 บาท
         </h1>
 
-    <!-- กรอบอัปโหลด -->
-
-    <div class="slip-frame">
-
-        <input
-        type="file"
-        id="slip"
-<div class="pay-box">
-
-    <div class="pay-header">
-
-        <h1>💳 ชำระเงิน</h1>
-
-        <h2 id="customerName">
-            กำลังโหลด...
-        </h2>
-
-        <p>ยอดที่ต้องชำระ</p>
-
-        <h1 id="amount">
-            0 บาท
-        </h1>
-
-    </div> <!-- ปิด pay-header -->
-
-
+    </div>
 
     <div class="qr-frame">
 
-        <img src="img/qr.png" class="qr">
+        <img src="qr.png" class="qr">
 
         <h2 class="qr-name">
             นาย ณัฐนันท์ พันธุ์บุรี
         </h2>
 
     </div>
-
-
 
     <div class="slip-frame">
 
@@ -80,8 +51,6 @@
 
     </div>
 
-
-
     <button
     id="submitBtn"
     onclick="submitPayment()">
@@ -91,8 +60,8 @@
     </button>
 
 </div>
+
 <script src="pay.js"></script>
 
 </body>
-
 </html>
