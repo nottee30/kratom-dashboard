@@ -30,7 +30,7 @@ input::placeholder{color:#94a3b8;}
 .welcome h2{margin-bottom:12px;}
 .welcome p{color:#94a3b8;}
 .qr{width:320px;max-width:90%;display:block;margin:30px auto;border-radius:20px;background:white;padding:15px;box-shadow:0 10px 30px rgba(0,0,0,.35);}
-.loader{width:70px;height:70px;border:8px solid #334155;border-top:8px solid #22c55e;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px;}
+.loading-logo{width:180px;max-width:70vw;margin-bottom:25px;animation:logoSpin 2.8s linear infinite,loadingGlow 2s ease-in-out infinite;filter:drop-shadow(0 0 15px #ffd700)drop-shadow(0 0 30px #00ff99)drop-shadow(0 0 45px #00cfff);}
 
 .pay-status{margin:10px 0;padding:10px;border-radius:12px;text-align:center;font-weight:bold;background:#e8f5e9;color:#2e7d32;}
 .pay-btn{width:100%;margin-top:20px;padding:18px;border:none;border-radius:15px;background:#22c55e;color:white;font-size:22px;font-weight:bold;cursor:pointer;transition:.25s;}
@@ -154,6 +154,8 @@ input::placeholder{color:#94a3b8;}
 .summary-card.last h3{color:#ffb3b3;text-shadow:0 0 8px rgba(255,70,70,.7);}
 .summary-card.last::after{background:#ff4040;animation:summaryGlow 2.5s ease-in-out infinite;}
 
+@keyframes logoSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes loadingGlow{0%,100%{filter:drop-shadow(0 0 10px #ffd700)drop-shadow(0 0 22px #00ff99)drop-shadow(0 0 35px #00cfff);}50%{filter:drop-shadow(0 0 18px #ffffff)drop-shadow(0 0 40px #00ff99)drop-shadow(0 0 60px #ffd700);}}
 @keyframes summaryGold{0%,100%{box-shadow:0 0 10px rgba(255,215,0,.30),0 0 25px rgba(255,215,0,.15);}50%{box-shadow:0 0 22px rgba(255,215,0,.70),0 0 55px rgba(255,215,0,.35);}}
 @keyframes summaryGlow{0%,100%{opacity:.35;transform:scale(.96);}50%{opacity:.85;transform:scale(1.03);}}
 @keyframes summarySilver{0%,100%{box-shadow:0 0 10px rgba(240,240,240,.25),0 0 25px rgba(220,220,220,.12);}50%{box-shadow:0 0 20px rgba(255,255,255,.60),0 0 50px rgba(220,220,220,.28);}}
