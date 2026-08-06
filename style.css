@@ -45,6 +45,7 @@ input::placeholder{color:#94a3b8;}
 .pay-btn:hover{background:#16a34a;transform:scale(1.02);}
 .pay-header>*{position:relative;z-index:2;}
 .pay-header{position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px 25px;margin-bottom:25px;background:url("img/detail-blue.png") center/100% 100% no-repeat;border:none;border-radius:20px;animation:blueAura 2.8s ease-in-out infinite;box-shadow:0 0 18px rgba(80,180,255,.30),0 0 45px rgba(80,180,255,.18);}.pay-header h1{color:#22c55e;font-size:34px;margin-bottom:15px;}
+.pay-header::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.55;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
 .pay-header h1{color:#7de8ff;text-shadow:0 0 8px rgba(80,200,255,.8),0 0 18px rgba(80,200,255,.45);}
 .pay-header h2{color:#ffffff;text-shadow:0 0 8px rgba(255,255,255,.8),0 0 18px rgba(255,255,255,.35);}
 .pay-header p{color:#ffd86b;text-shadow:0 0 8px rgba(255,215,0,.6);}
