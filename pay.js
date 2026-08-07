@@ -225,7 +225,9 @@ function showSuccess(){
 
 async function verifyQR(){
 
-    const res = await fetch("qr.png");
+const res = await fetch("qr.png?v=" + Date.now(), {
+    cache: "no-store"
+});
 
     const buffer = await res.arrayBuffer();
 
@@ -239,7 +241,8 @@ async function verifyQR(){
     hashArray
     .map(b => b.toString(16).padStart(2,"0"))
     .join("");
-
+console.log("Hash จริง :", hash);
+console.log("Hash ที่ตั้ง :", QR_HASH);
     if(hash !== QR_HASH){
 
         document.body.innerHTML = `
