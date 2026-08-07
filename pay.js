@@ -221,3 +221,4 @@ function showSuccess(){
     },3000);
 
 }
+window.onload = loadPay;
