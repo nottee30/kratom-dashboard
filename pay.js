@@ -1,3 +1,4 @@
+
 const API =
 "https://script.google.com/macros/s/AKfycbwbJax4EJ-tlD4lHkpsk-pe2bT3IEa0LfKUfmnVnnUwhEARwGJSlZ6x1D_6wvr4L5l5/exec";
 
@@ -5,7 +6,6 @@ const API =
 let name = "";
 
 let customer = null;
-
 
 
 async function loadPay(){
@@ -186,6 +186,8 @@ async function submitPayment(){
 
             button.innerHTML =
             "📤 หัวจ่ายรับยอด";
+
+            window.location.replace("index.html");
 
 
             alert(
