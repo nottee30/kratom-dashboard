@@ -169,6 +169,30 @@ input::placeholder{color:#94a3b8;}
 .summary-card.last h3{color:#ffb3b3;text-shadow:0 0 8px rgba(255,70,70,.7);}
 .summary-card.last::after{background:#ff4040;animation:summaryGlow 2.5s ease-in-out infinite;}
 
+
+.success-overlay{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.75);display:none;justify-content:center;align-items:center;z-index:999999;}
+.success-box{width:90%;max-width:430px;padding:35px;text-align:center;border-radius:28px;background:#111827;border:2px solid #00ff88;box-shadow:0 0 18px #00ff88,0 0 35px #00ff88,0 0 70px rgba(0,255,120,.5);animation:popupScale .4s;}
+.success-icon{font-size:72px;animation:successPulse 1.2s infinite;}
+.success-box h2{color:#65ff9d;font-size:34px;margin:15px 0;text-shadow:0 0 10px #00ff88,0 0 25px #00ff88;}
+.success-box p{font-size:24px;color:white;margin-bottom:25px;}
+.success-box small{font-size:18px;color:#ffd54f;}
+.success-loader{width:55px;height:55px;margin:25px auto;border:5px solid rgba(255,255,255,.15);border-top:5px solid #00ff88;border-radius:50%;animation:spin 1s linear infinite;}
+.popup-overlay{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.75);display:flex;justify-content:center;align-items:center;z-index:99999;animation:popupFade .35s;}
+.popup-box{width:90%;max-width:430px;padding:35px;border-radius:22px;background:#111827;border:3px solid #ff3333;text-align:center;box-shadow:0 0 18px red,0 0 35px red,0 0 60px rgba(255,0,0,.8);animation:dangerFlash .8s infinite,popupScale .4s;}
+.popup-icon{font-size:64px;margin-bottom:10px;animation:iconShake .6s infinite;}
+.popup-box h2{color:#ff4040;font-size:34px;margin-bottom:10px;text-shadow:0 0 8px red,0 0 18px red;}
+.popup-box h3{color:#6cff9b;font-size:28px;margin:20px 0;text-shadow:0 0 10px #00ff88,0 0 25px #00ff88;}
+.popup-box p{font-size:20px;color:white;line-height:1.7;}
+.popup-box small{display:block;margin-top:15px;font-size:18px;color:#ffd54f;line-height:1.6;}
+.popup-box button{margin-top:30px;padding:16px 40px;font-size:22px;border:none;border-radius:14px;cursor:pointer;background:#ff3333;color:white;font-weight:bold;box-shadow:0 0 12px red;transition:.2s;}
+.popup-box button:hover{transform:scale(1.05);background:#ff0000;}
+
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes successPulse{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+@keyframes dangerFlash{0%{border-color:#ff0000;box-shadow:0 0 15px red,0 0 30px red;}50%{border-color:#ff9900;box-shadow:0 0 30px orange,0 0 55px red;}100%{border-color:#ff0000;box-shadow:0 0 15px red,0 0 30px red;}}
+@keyframes iconShake{0%{transform:rotate(0deg);}20%{transform:rotate(-8deg);}40%{transform:rotate(8deg);}60%{transform:rotate(-8deg);}80%{transform:rotate(8deg);}100%{transform:rotate(0deg);}}
+@keyframes popupScale{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+@keyframes popupFade{from{opacity:0;}to{opacity:1;}}
 @keyframes ringRotate{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
 @keyframes logoSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 @keyframes loadingGlow{0%,100%{filter:drop-shadow(0 0 10px #ffd700)drop-shadow(0 0 22px #00ff99)drop-shadow(0 0 35px #00cfff);}50%{filter:drop-shadow(0 0 18px #ffffff)drop-shadow(0 0 40px #00ff99)drop-shadow(0 0 60px #ffd700);}}
