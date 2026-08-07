@@ -162,8 +162,6 @@ async function submitPayment(){
 
         showSuccess();
 
-          window.location.replace("index.html");
-
             }else{
 
                 button.disabled = false;
@@ -210,6 +208,8 @@ function closePopup(){
 
 function showSuccess(){
 
+    console.log("showSuccess ทำงานแล้ว");
+
     document
         .getElementById("successPopup")
         .style.display = "flex";
@@ -219,10 +219,5 @@ function showSuccess(){
         window.location.replace("index.html");
 
     },3000);
-
-}
-window.onload = function(){
-
-    loadPay();
 
 }
