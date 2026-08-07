@@ -221,4 +221,6 @@ function showSuccess(){
     },3000);
 
 }
-window.onload = loadPay;
+window.onload = function () {
+    loadPay();
+};
