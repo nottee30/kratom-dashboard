@@ -12,6 +12,44 @@
 
 </head>
 
+<!-- Popup Warning -->
+<div id="warningPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="popup-icon">
+            ⚠️
+        </div>
+
+        <h2>คำเตือน</h2>
+
+        <p>
+            กรุณาตรวจสอบชื่อผู้รับก่อนโอนทุกครั้ง
+        </p>
+
+        <h3>
+            นาย ณัฐนันท์ พันธุ์บุรี
+        </h3>
+
+        <p>
+            หากสแกนแล้วขึ้นชื่ออื่น
+            <br>
+            กรุณาหยุดการโอนทันที
+        </p>
+
+        <small>
+            ทางร้านจะไม่รับผิดชอบ
+            หากโอนผิดบัญชีทุกกรณี
+        </small>
+
+        <button onclick="closePopup()">
+            ✅ รับทราบ
+        </button>
+
+    </div>
+
+</div>
+
 <body>
 
 <div class="pay-box">
@@ -69,3 +107,11 @@
 
 </body>
 </html>
+
+function closePopup(){
+
+document
+.getElementById("warningPopup")
+.style.display="none";
+
+}
