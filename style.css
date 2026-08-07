@@ -32,9 +32,10 @@ input::placeholder{color:#94a3b8;}
 .welcome{display:block;text-align:center;}
 .welcome h2{margin-bottom:12px;}
 .welcome p{color:#94a3b8;}
-.qr-frame{position:relative;width:100%;max-width:380px;margin:0 auto;padding:22px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}.qr-frame::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.6;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
+.qr-frame{position:relative;width:100%;max-width:380px;margin:0 auto;padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
+.qr-frame::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.6;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
 .qr{width:82%;max-width:280px;display:block;background:transparent;padding:0;border-radius:0;margin:0 auto 18px;}
-.qr-name{display:block;width:100%;margin-top:20px;text-align:center;font-size:24px;font-weight:bold;color:#ffffff;white-space:nowrap;writing-mode:horizontal-tb;text-shadow:0 0 8px #4fc3ff,0 0 18px rgba(79,195,255,.8);letter-spacing:1px;}
+.qr-name{margin-top:18px;width:100%;text-align:center;font-size:24px;font-weight:bold;color:#fff;white-space:nowrap;letter-spacing:1px;text-shadow:0 0 8px #7de8ff,0 0 18px #4fc3ff;}
 .qr-title{text-align:center;margin-bottom:18px;}
 .slip-frame{position:relative;width:320px;max-width:90%;margin:18px auto;padding:18px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
 .slip-frame::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.6;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
