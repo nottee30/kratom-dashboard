@@ -22,7 +22,7 @@ input::placeholder{color:#94a3b8;}
 #customerSelect:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.35);}
 #customerSelect:focus{border:2px solid #22c55e;}.search-section{display:flex;flex-direction:column;align-items:center;gap:18px;margin:35px 0;}
 #search{width:520px;max-width:100%;padding:15px 20px;background:#1e293b;color:#fff;border:none;border-radius:14px;font-size:17px;outline:none;box-shadow:0 8px 18px rgba(0,0,0,.25);transition:.25s;}
-#amount{color:#52ff89;text-shadow:0 0 10px rgba(0,255,120,.9),0 0 24px rgba(0,255,120,.45);font-size:45px;margin:6px 0 0;line-height:1;}
+#amount{color:#52ff89;text-shadow:0 0 10px rgba(0,255,120,.9),0 0 24px rgba(0,255,120,.45);font-size:40px;margin:6px 0 0;line-height:1;}
 #slip{display:none;}
 #slip::file-selector-button{background:#2563eb;color:white;border:none;padding:16px 28px;border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer;margin-right:15px;transition:.25s;}
 #slip::file-selector-button:hover{background:#1d4ed8;}
@@ -40,7 +40,7 @@ input::placeholder{color:#94a3b8;}
 .slip-frame{position:relative;width:320px;max-width:90%;margin:18px auto;border-radius:22px;padding:18px;display:flex;justify-content:center;align-items:center;background:url("img/detail-blue.png") center/100% 100% no-repeat;box-shadow:0 0 18px rgba(80,180,255,.35),0 0 45px rgba(80,180,255,.18);animation:blueAura 2.8s ease-in-out infinite;}
 .slip-frame::after{content:"";position:absolute;inset:-8px;border-radius:22px;background:#4fc3ff;filter:blur(18px);opacity:.6;z-index:-1;animation:summaryGlow 2.8s ease-in-out infinite;}
 .slip-frame #slip{width:88%;margin:0;}
-.upload-btn{display:inline-block;padding:14px 28px;background:#2563eb;border-radius:14px;cursor:pointer;font-size:18px;font-weight:bold;color:#fff;transition:.25s;}
+.upload-btn{display:inline-block;padding:14px 28px;background:#2563eb;border-radius:14px;cursor:pointer;font-size:13px;font-weight:bold;color:#fff;transition:.25s;}
 .upload-btn:hover{transform:scale(1.04);}
 .loading-logo{width:180px;max-width:70vw;margin-bottom:25px;animation:logoSpin 2.8s linear infinite,loadingGlow 2s ease-in-out infinite;filter:drop-shadow(0 0 15px #ffd700)drop-shadow(0 0 30px #00ff99)drop-shadow(0 0 45px #00cfff);}
 
