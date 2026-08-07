@@ -1,7 +1,8 @@
 
 const API =
 "https://script.google.com/macros/s/AKfycbwbJax4EJ-tlD4lHkpsk-pe2bT3IEa0LfKUfmnVnnUwhEARwGJSlZ6x1D_6wvr4L5l5/exec";
-
+    const QR_HASH =
+"e5a694be16140a7647e751adfd27d47791576a295d8522ea7395a80b1e53f122";
 
 let name = "";
 
@@ -221,9 +222,68 @@ function showSuccess(){
     },3000);
 
 }
-document
-.getElementById("slip")
-.addEventListener("change", function(){
+
+async function verifyQR(){
+
+    const res = await fetch("qr.png");
+
+    const buffer = await res.arrayBuffer();
+
+    const hashBuffer =
+    await crypto.subtle.digest("SHA-256", buffer);
+
+    const hashArray =
+    Array.from(new Uint8Array(hashBuffer));
+
+    const hash =
+    hashArray
+    .map(b => b.toString(16).padStart(2,"0"))
+    .join("");
+
+    if(hash !== QR_HASH){
+
+        document.body.innerHTML = `
+        <div style="
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:#111;
+            color:#ff4040;
+            text-align:center;
+            font-family:sans-serif;
+            padding:30px;
+        ">
+            <h1>🚨 SECURITY ALERT 🚨</h1>
+
+            <h2>ตรวจพบการเปลี่ยนแปลง QR CODE</h2>
+
+            <p>
+            ระบบถูกล็อกเพื่อความปลอดภัย
+            <br><br>
+            กรุณาติดต่อผู้ดูแล
+            </p>
+        </div>`;
+
+        throw new Error("QR ถูกแก้ไข");
+
+    }
+
+}
+window.onload = async function(){
+
+    await verifyQR();
+
+    await loadPay();
+    
+    document
+    .getElementById("preview")
+    .hidden = true;
+
+    document
+    .getElementById("slip")
+    .addEventListener("change", function(){
 
     const file =
     this.files[0];
@@ -248,12 +308,4 @@ document
     reader.readAsDataURL(file);
 
 });
-window.onload = function(){
-
-    loadPay();
-
-    document
-    .getElementById("preview")
-    .hidden = true;
-
 }
