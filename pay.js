@@ -157,13 +157,12 @@ async function submitPayment(){
 
             if(result.includes("OK")){
 
-                button.innerHTML =
-                "✅ หัวจ่ายรับยอด";
+        button.innerHTML =
+        "✅ หัวจ่ายรับยอด";
 
-                alert(
-                "ส่งยอดให้หัวจ่ายแล้ว รอตรวจ"
-                );
+        showSuccess();
 
+          window.location.replace("index.html");
 
             }else{
 
@@ -186,9 +185,6 @@ async function submitPayment(){
 
             button.innerHTML =
             "📤 หัวจ่ายรับยอด";
-
-            window.location.replace("index.html");
-
 
             alert(
             "ERROR : " +
