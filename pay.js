@@ -200,8 +200,17 @@ async function submitPayment(){
 
 }
 
+function closePopup(){
+
+    document
+        .getElementById("warningPopup")
+        .style.display = "none";
+
+}
 
 
+window.onload = function(){
 
-window.onload =
-loadPay;
+    loadPay();
+
+}
