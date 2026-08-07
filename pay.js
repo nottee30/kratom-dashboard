@@ -241,14 +241,19 @@ document
         preview.src =
         e.target.result;
 
-        preview.style.display =
-        "block";
+        preview.hidden = false;
 
     };
 
     reader.readAsDataURL(file);
 
 });
-window.onload = function () {
+window.onload = function(){
+
     loadPay();
-};
+
+    document
+    .getElementById("preview")
+    .hidden = true;
+
+}
