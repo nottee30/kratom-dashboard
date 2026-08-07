@@ -208,7 +208,19 @@ function closePopup(){
 
 }
 
+function showSuccess(){
 
+    document
+        .getElementById("successPopup")
+        .style.display = "flex";
+
+    setTimeout(function(){
+
+        window.location.replace("index.html");
+
+    },3000);
+
+}
 window.onload = function(){
 
     loadPay();
